@@ -18,6 +18,26 @@ body {
   font-weight: normal;
 }
 
+<<<<<<< HEAD
+=======
+
+.checklist {
+      padding: 10px;
+      text-align: center;
+      border: 8px solid black;
+      background-color: #EFAA52
+}
+
+.checklistinfo {
+  font-size: 32px;
+}
+.checklistinfo2 {
+  font-size: 24px;
+  margin: 40px;
+
+}
+=======
+>>>>>>> f5f0e9913fb742a63002b4321b804dbff048039d
 .login {
   color: #E5DACE;
   font-size: 25px;
@@ -30,6 +50,7 @@ body {
   text-align: center;
   color: #E7BAA0;
 }
+<<<<<<< HEAD
 
 .checklist {
   border: 20px solid black;
@@ -40,3 +61,5 @@ body {
     border: 5px solid gray;
     margin: 0;
 } */
+=======
+>>>>>>> f5f0e9913fb742a63002b4321b804dbff048039d

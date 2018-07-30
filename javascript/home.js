@@ -1,1 +1,2 @@
-alert('hi!')
+let toggle = document.querySelector('.toggle');
+console.log(toggle);
