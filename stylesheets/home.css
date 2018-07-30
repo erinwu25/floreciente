@@ -18,9 +18,6 @@ body {
   font-weight: normal;
 }
 
-/* #g {
-    width: 320px;
-    padding: 10px;
-    border: 5px solid gray;
-    margin: 0;
-} */
+.checklist {
+  border: 20px solid black ;
+}
