@@ -24,10 +24,14 @@ body {
 }
 =======
 .login {
-  padding-left: 500px;
   color: #E5DACE;
   font-size: 25px;
   text-decoration: none;
+}
+
+.quote {
+  text-align: center;
+  color: #E7BAA0;
 }
 
 /* #g {
