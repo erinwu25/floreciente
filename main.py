@@ -11,6 +11,9 @@ class Student(ndb.Model):
     email = ndb.StringProperty()
     birthday = ndb.DateProperty()
 
+class Quote(ndb.Model):
+    content = ndb.StringProperty()
+    author = ndb.StringProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -20,6 +23,11 @@ env = jinja2.Environment(
 
 
 class MainPage(webapp2.RequestHandler):
+    def pickquote(self):
+        return "hi"
+        #query looku for quotes in database. use random function
+        #to pick random index in list, pick quote to return the quote that
+        #was selected
     def get(self):
         login_url = ''
         logout_url = ''
@@ -37,6 +45,7 @@ class MainPage(webapp2.RequestHandler):
             'current_user' : current_user,
             'login_url' : login_url,
             'logout_url' : logout_url,
+            'quote' : self.pickquote(),
         }
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
