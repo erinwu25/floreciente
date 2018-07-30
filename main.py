@@ -29,7 +29,8 @@ env = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def pickquote(self):
-        return "hi"
+        randquote = Quote.query().get()
+        return randquote
         #query looku for quotes in database. use random function
         #to pick random index in list, pick quote to return the quote that
         #was selected
