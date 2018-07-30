@@ -3,7 +3,11 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 <body>
   <div>
-    <p>Floreciente | Cultivating Excellence</p>
+    <p class="flor">Floreciente
+      <span class="florslogan">
+        Cultivating Excellence
+      </span>
+    </p>
     {% if current_user %}
     <h3 id="text">Welcome, {{current_user}}!</h3>
     <form action="/" method="post">
@@ -15,6 +19,4 @@
       <a href="{{login_url}}">Log in here</a>
 
     {% endif %}
-=======
-    <p class="flor"> Floreciente <span class="florslogan"> Cultivating Excellence </span><p>
 </body>
