@@ -3,6 +3,24 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 <body>
   <div>
+<<<<<<< HEAD
     <p>Floreciente | Cultivating Excellence</p>
+<<<<<<< HEAD
     
+=======
+    {% if current_user %}
+    <h3 id="text">Welcome, {{current_user}}!</h3>
+    <form action="/" method="post">
+      <input name="content"><p>
+      <button>Sign</button>
+    </form>
+    <a href="{{logout_url}}">Log out</a><p>
+    {% else %}
+      <a href="{{login_url}}">Log in here</a>
+
+    {% endif %}
+=======
+    <p class="flor"> Floreciente <span class="florslogan"> Cultivating Excellence </span><p>
+>>>>>>> fa38db3bc3bd0ca0dbf2249573c44099464d1108
+>>>>>>> c3b0681b17a9a9880e8bf81c67ce6e28b02ca689
 </body>
