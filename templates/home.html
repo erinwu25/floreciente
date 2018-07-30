@@ -9,9 +9,9 @@
       </span>
       {% if current_user %}
       <h3 class="login">Welcome, {{current_user}}!</h3>
-        <form action="/" method="post">
-          <input name="content"><p>
-            <button>Sign</button>
+        <form action="/qpg" method="get">
+          <p>
+            <button>Quiz</button>
         </form>
       <a href="{{logout_url}}">Log out</a><p>
       {% else %}
