@@ -9,19 +9,25 @@
       </span>
       {% if current_user %}
       <h3 class="login">Welcome, {{current_user}}!</h3>
-      <form action="/" method="post">
-        <input name="content"><p>
-        <button>Sign</button>
-      </form>
+        <form action="/" method="post">
+          <input name="content"><p>
+            <button>Sign</button>
+        </form>
       <a href="{{logout_url}}">Log out</a><p>
       {% else %}
       <a class="login" href="{{login_url}}">Log in / Sign Up</a>
       {% endif %}
     </p>
-    <br>
-    <br>
-    <br>
-    <div>
-      <p class="quote">
+  <br>
+  <br>
+  <br>
+  <div>
+    <p class="quote">
         "{{quote}}"
+  </div>
+  <div>
+  </div>
+
+
 </body>
+<script src="javascript/home.js"></script>
