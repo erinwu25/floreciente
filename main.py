@@ -10,6 +10,11 @@ class Student(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
     birthday = ndb.DateProperty()
+    #questions = ndb.StructuredProperty(Question, repeated=True)
+
+class Question(ndb.Model):
+    question = ndb.StringProperty()
+    answer = ndb.IntegerProperty()
 
 class Quote(ndb.Model):
     content = ndb.StringProperty()
@@ -57,6 +62,23 @@ class MainPage(webapp2.RequestHandler):
     #     post.put()
     #     self.redirect('/')
 
+
+# class QuestionPage(webapp2.RequestHandler):
+#     def get(self):
+#         qs = [
+#             #question 1
+#             templateVars = {
+#                 'question' = 'blah blah blah',
+#                 'answers' = ['a1', 'a2', 'a3'],
+#             },
+#             #question 2
+#             templateVars = {
+#                 'question' = 'blah blah blah',
+#                 'answers' = ['a1', 'a2', 'a3'],
+#             },
+#
+#
+#         ]
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
