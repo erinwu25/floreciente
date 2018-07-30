@@ -64,25 +64,27 @@ class MainPage(webapp2.RequestHandler):
     #     self.redirect('/')
 
 
-# class QuestionPage(webapp2.RequestHandler):
-#     def get(self):
-#         qs = [
-#             #question 1
-#             templateVars = {
-#                 'question' = 'blah blah blah',
-#                 'answers' = ['a1', 'a2', 'a3'],
-#             },
-#             #question 2
-#             templateVars = {
-#                 'question' = 'blah blah blah',
-#                 'answers' = ['a1', 'a2', 'a3'],
-#             },
-#
-#
-#         ]
+class QuestionPage(webapp2.RequestHandler):
+    def get(self):
+        qs = [
+            #question 1
+            {
+                'question' : 'blah blah blah',
+                'answers' : ['a1', 'a2', 'a3'],
+            },
+            #question 2
+            {
+                'question' : 'blah blah blah',
+                'answers' : ['a1', 'a2', 'a3'],
+            },
+        ]
+        template = env.get_template("/templates/qpg.html")
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/questions', QuestionPage),
+
 
 
 ], debug=True)
