@@ -18,6 +18,13 @@ body {
   font-weight: normal;
 }
 
+.login {
+  padding-left: 500px;
+  color: #E5DACE;
+  font-size: 25px;
+  text-decoration: none;
+}
+
 /* #g {
     width: 320px;
     padding: 10px;
