@@ -18,6 +18,11 @@ body {
   font-weight: normal;
 }
 
+<<<<<<< HEAD
+.checklist {
+  border: 20px solid black ;
+}
+=======
 .login {
   color: #E5DACE;
   font-size: 25px;
@@ -35,3 +40,4 @@ body {
     border: 5px solid gray;
     margin: 0;
 } */
+>>>>>>> 7e2d852049b45119541ac3483eb2962e3b2bbbf9
