@@ -3,10 +3,18 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
 <body>
   <div>
-    <p class="flor">
-      Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-    <p>
+    <p>Floreciente | Cultivating Excellence</p>
+    {% if current_user %}
+    <h3 id="text">Welcome, {{current_user}}!</h3>
+    <form action="/" method="post">
+      <input name="content"><p>
+      <button>Sign</button>
+    </form>
+    <a href="{{logout_url}}">Log out</a><p>
+    {% else %}
+      <a href="{{login_url}}">Log in here</a>
+
+    {% endif %}
+=======
+    <p class="flor"> Floreciente <span class="florslogan"> Cultivating Excellence </span><p>
 </body>
