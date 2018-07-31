@@ -41,7 +41,58 @@ li {
   color: #E7BAA0;
 }
 .author {
-  padding-left: 350px;
   text-align: center;
   color: #E7BAA0;
+
+}
+
+.welcome {
+  text-decoration: none;
+  float: right;
+  color: #E7BAA0;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.logout {
+  text-decoration: none;
+  float: right;
+  color: #E5DACE;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.quiz {
+  text-align: center;
+}
+
+.headabovebutton {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFAF4;
+}
+
+.abovebutton {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #FFFAF4;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.button {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  background-color: #C2A59F;
+  border: none;
+  color: white;
+  padding: 20px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
 }

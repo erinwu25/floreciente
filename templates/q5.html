@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>Questions</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/Questions.css">
+<body>
+  <div>
+    <p class="flor"> Floreciente
+      <span class="florslogan">
+        Cultivating Excellence
+      </span>
+    </p>
+<div class="questions">
+<form method=POST action="/">
+    <h2>Have you began researching potential careers that interest you?</h2>
+    <p><input type="radio" name="grade" value="underclassman">I have not found any careers that suit my interest.<br>
+    <br>
+    <input type="radio" name="grade" value="upperclassman">I have come across some careers that I find interesting.<br>
+    <br>
+  </p>
+    <input type="submit" value="Next question"/>
+</form>
+</div>
+<p>{{qs[0]['question']}}<p>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <title> Floreciente | Home </title>
 <link rel="stylesheet" type="text/css" href="../stylesheets/home.css">
+<link rel="icon" href="rose.jpg">
+
 <body>
   <div>
     <ul>
@@ -14,27 +16,34 @@
           Cultivating Excellence
         </span>
       </li>
-      <li class="login">
         {% if current_user %}
-        <h3 class="login"> Welcome, {{current_user}}!</h3>
-          <form action="/qpg" method="get">
-            <p>
-              <button>Quiz</button>
-          </form>
-        <a href="{{logout_url}}"> Log out </a><p>
-        {% else %}
-        <a class="login" href="{{login_url}}"> Log in / Sign Up </a>
-        {% endif %}
-    </li>
-    </p>
-  <br>
-  <br>
-  <br>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
+      <li class="welcome">
+        Welcome, {{current_user}}!
+      </li>
+    <ul>
   <div>
-    <p class="quote">
-        "{{quote}}"
+    <br><br><br>
+    <p class="headabovebutton">
+      Hey {{current_user}},
     </p>
-    <p class="author">
-        - {{author}}
+    <p class="abovebutton">
+      you are on the right path being here. To get started on the journey to higher
+      education and a brighter future, click to start the quiz below!
+    </p>
+      <form class="quiz" action="/qpg" method="get">
+        <button class="button">
+          Quiz
+        </button>
+      </form>
   </div>
+        {% else %}
+          <a class="login" href="{{login_url}}"> Log in / Sign Up </a>
+          <br>
+        {% endif %}
+      </li>
 </body>
