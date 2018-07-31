@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<title>Questions</title>
-
-<form method=POST action="/qpg">
-    <h2>What is your name?<h2>
-    <input name="name"><p>
-
-    <h2>What grade are you in?</h2>
-    <input type="radio" name="grade" value="underclassman">9th-10th<br>
-    <input type="radio" name="grade" value="upperclassman">11th-12th<br>
-    <input type="hidden" name="stage" value="intro">
-    <p>
-    <input type="submit" value="Submit"/>
-</form>
+<title>Floreciente | Start </title>
+<link rel="stylesheet" type="text/css" href="stylesheets/qpg.css">
+<body>
+  <div>
+    <ul>
+      <li>
+        <span class="flor">
+          Floreciente
+        </span>
+      </li>
+      <li>
+        <span class="florslogan">
+          Cultivating Excellence
+        </span>
+      </li>
+    </ul>
+  </div>
+  <br>
+  <div class="form">
+    <form method=POST action="/">
+      <p>
+        What is your name?
+      </p>
+      <input name="name"><p>
+      <p>What grade are you in?</p>
+      <input type="checkbox" name="grade" value="underclassman">
+        9th-10th
+      </input>
+      <input type="checkbox" name="grade" value="upperclassman">11th-12th</input>
+      <p>
+      <input type="submit" value="Submit"/>
+    </form>
+  </div>
+</body>
