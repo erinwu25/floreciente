@@ -136,11 +136,20 @@ class QuestionPage(webapp2.RequestHandler):
         #psat
         elif stage == 'psat':
             psat = self.request.get('psat')
-            if  excs == 'no':
+            if  psat == 'no':
                 template = env.get_template("templates/lowerresource4.html")
                 self.response.write(template.render())
             else:
                 template = env.get_template("templates/lowerq5.html")
+                self.response.write(template.render())
+        #careers
+        elif stage == 'careers':
+            career = self.request.get('career')
+            if  career == 'no':
+                template = env.get_template("templates/lowerresource5.html")
+                self.response.write(template.render())
+            else:
+                template = env.get_template("templates/lowerq6.html")
                 self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
