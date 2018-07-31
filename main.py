@@ -78,8 +78,9 @@ class QuestionPage(webapp2.RequestHandler):
                 'answers' : ['a1', 'a2', 'a3'],
             },
         ]
+        print("hi")
         template = env.get_template("/templates/qpg.html")
-        self.response.write(template.render())
+        self.response.write(template.render(qs=qs))
 
     #def post(self):
 
