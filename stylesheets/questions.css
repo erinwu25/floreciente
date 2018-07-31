@@ -1,0 +1,21 @@
+
+body{
+  background-color: #6D7973;
+  color: #E5DACE;
+  font-size: 28px;
+}
+p{
+  color: black;
+  font-size: 24px;
+}
+.questions{
+  padding: 10px;
+  border: 8px solid black;
+  background-color: #874E4C
+}
+.flor {
+  color: #E5DACE;
+  padding-left: 15px;
+  font-weight: bold;
+  list-style-type: none;
+}
