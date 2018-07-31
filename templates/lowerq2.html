@@ -12,11 +12,12 @@
 <form method=POST action="/">
     <h2>Are you involved in any extracurricular activities such as school clubs,
     sports, student body, etc?</h2>
-    <p><input type="radio" name="grade" value="underclassman">I am not involved in any extracurriculars.<br>
+    <p><input type="radio" name="ecs" value="no">I am not involved in any extracurriculars.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I am involved in extracurriculars
+    <input type="radio" name="ecs" value="yes">I am involved in extracurriculars
     at my school.<br>
     <br>
+    <input type="hidden" name="stage" value="extracurriculars">
   </p>
     <input type="submit" value="Next question"/>
 </form>

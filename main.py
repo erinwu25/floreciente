@@ -50,7 +50,7 @@ class MainPage(webapp2.RequestHandler):
         current_user = users.get_current_user()
         #if no one is logged in, show a login prompt
         if not current_user:
-            login_url = users.create_login_url('/redirect')
+            login_url = users.create_login_url('/')
         else:
             logout_url = users.create_logout_url('/')
         # posts = Post.query().fetch()
@@ -81,22 +81,49 @@ class RedirectPage(webapp2.RequestHandler):
 
 class QuestionPage(webapp2.RequestHandler):
     def get(self):
-        qs = [
-            #question 1
-            {
-                'question' : 'What is your name?',
-                'answers' : ['a1', 'a2', 'a3'],
-            },
-            #question 2
-            {
-                'question' : 'blah blah blah',
-                'answers' : ['a1', 'a2', 'a3'],
-            },
-        ]
+        # qs = [
+        #     #question 1
+        #     {
+        #         'question' : 'What is your name?',
+        #         'answers' : ['a1', 'a2', 'a3'],
+        #     },
+        #     #question 2
+        #     {
+        #         'question' : 'blah blah blah',
+        #         'answers' : ['a1', 'a2', 'a3'],
+        #     },
+        # ]
         template = env.get_template("/templates/qpg.html")
-        self.response.write(template.render(qs=qs))
+        self.response.write(template.render())
 
-    #def post(self):
+    def post(self):
+        stage = self.request.get('stage')
+        #intro
+        if stage == 'intro':
+            year = self.request.get('grade')
+            if year == 'underclassman':
+                template = env.get_template("templates/lowerq1.html")
+                self.response.write(template.render())
+            else:
+                self.response.write('upperclassman')
+        #study habits
+        elif stage == 'study':
+            studyhabits = self.request.get('studyh')
+            if  studyhabits == 'whenever' or studyhabits == 'not':
+                template = env.get_template("templates/lowerresource1.html")
+                self.response.write(template.render())
+            else:
+                template = env.get_template("templates/lowerq2.html")
+                self.response.write(template.render())
+        #extracurriculars
+    elif stage == 'extracurriculars':
+            excs = self.request.get('ecs')
+            if  excs == 'no':
+                template = env.get_template("templates/lowerresource2.html")
+                self.response.write(template.render())
+            else:
+                template = env.get_template("templates/lowerq3.html")
+                self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([

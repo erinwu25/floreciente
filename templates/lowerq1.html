@@ -11,16 +11,16 @@
 <div class="questions">
 <form method=POST action="/">
     <h2>How are your study habits?</h2>
-    <p><input type="radio" name="grade" value="underclassman">I study often,
+    <p><input type="radio" name="studyh" value="often">I study often,
     I have an organized schedule of my school assignments.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I study whenever
+    <input type="radio" name="studyh" value="whenever">I study whenever
     I want to.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I don't study.<br>
+    <input type="radio" name="studyh" value="not">I don't study.<br>
     <br>
+    <input type="hidden" name="stage" value="study">
   </p>
     <input type="submit" value="Next question"/>
 </form>
 </div>
-<p>{{qs[0]['question']}}<p>
