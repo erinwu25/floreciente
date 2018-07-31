@@ -2,7 +2,7 @@
       padding: 10px;
       text-align: center;
       border: 8px solid black;
-      background-color: #EFAA52
+      background-color: #874E4C
 }
 
 .checklistinfo {
@@ -17,4 +17,9 @@
 
 .checklist {
   border: 20px solid black;
+}
+
+body{
+  background-color: #6D7973;
+  color: #E5DACE;
 }
