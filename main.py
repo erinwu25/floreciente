@@ -116,7 +116,7 @@ class QuestionPage(webapp2.RequestHandler):
                 template = env.get_template("templates/lowerq2.html")
                 self.response.write(template.render())
         #extracurriculars
-    elif stage == 'extracurriculars':
+        elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
             if  excs == 'no':
                 template = env.get_template("templates/lowerresource2.html")
@@ -124,7 +124,24 @@ class QuestionPage(webapp2.RequestHandler):
             else:
                 template = env.get_template("templates/lowerq3.html")
                 self.response.write(template.render())
-
+        #classes
+        elif stage == 'classes':
+            classes = self.request.get('classes')
+            if  classes == 'not':
+                template = env.get_template("templates/lowerresource3.html")
+                self.response.write(template.render())
+            else:
+                template = env.get_template("templates/lowerq4.html")
+                self.response.write(template.render())
+        #psat
+        elif stage == 'psat':
+            psat = self.request.get('psat')
+            if  excs == 'no':
+                template = env.get_template("templates/lowerresource4.html")
+                self.response.write(template.render())
+            else:
+                template = env.get_template("templates/lowerq5.html")
+                self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),

@@ -11,12 +11,13 @@
 <div class="questions">
 <form method=POST action="/">
     <h2>Have you began practicing for the PSAT? </h2>
-    <p><input type="radio" name="grade" value="underclassman">I have not began studying for the PSAT.<br>
+    <p><input type="radio" name="psat" value="no">I have not began studying for the PSAT.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I have started studying for the PSAT.<br>
+    <input type="radio" name="psat" value="yes">I have started studying for the PSAT.<br>
     <br>
   </p>
     <input type="submit" value="Next question"/>
 </form>
+    <input type="hidden" name="stage" value="psat">
 </div>
 <p>{{qs[0]['question']}}<p>

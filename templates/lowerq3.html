@@ -11,13 +11,14 @@
 <div class="questions">
 <form method=POST action="/">
     <h2>Have you began taking any challenging courses such as AP/IB/Honors classes?</h2>
-    <p><input type="radio" name="grade" value="underclassman">I have taken some AP/IB courses so far.<br>
+    <p><input type="radio" name="classes" value="ontrack">I have taken some AP/IB courses so far.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I am not taking any AP/IB/Honors courses.
+    <input type="radio" name="classes" value="not">I am not taking any AP/IB/Honors courses.
     at my school.<br>
     <br>
   </p>
     <input type="submit" value="Next question"/>
 </form>
+    <input type="hidden" name="stage" value="classes">
 </div>
 <p>{{qs[0]['question']}}<p>
