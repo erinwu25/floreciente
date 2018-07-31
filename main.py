@@ -60,7 +60,7 @@ class MainPage(webapp2.RequestHandler):
             'current_user' : current_user,
             'login_url' : login_url,
             'logout_url' : logout_url,
-            'quote' : self.pickquote(),
+            #'quote' : self.pickquote(),
         }
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
