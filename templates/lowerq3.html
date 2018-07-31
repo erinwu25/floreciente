@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>Questions</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/Questions.css">
+<body>
+  <div>
+    <p class="flor"> Floreciente
+      <span class="florslogan">
+        Cultivating Excellence
+      </span>
+    </p>
+<div class="questions">
+<form method=POST action="/">
+    <h2>Have you began taking any challenging courses such as AP/IB/Honors classes?</h2>
+    <p><input type="radio" name="grade" value="underclassman">I have taken some AP/IB courses so far.<br>
+    <br>
+    <input type="radio" name="grade" value="upperclassman">I am not taking any AP/IB/Honors courses.
+    at my school.<br>
+    <br>
+  </p>
+    <input type="submit" value="Next question"/>
+</form>
+</div>
+<p>{{qs[0]['question']}}<p>
