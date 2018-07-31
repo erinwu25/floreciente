@@ -3,20 +3,29 @@
 <link rel="stylesheet" type="text/css" href="../stylesheets/home.css">
 <body>
   <div>
-    <p class="flor">Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-      {% if current_user %}
-      <h3 class="login">Welcome, {{current_user}}!</h3>
-        <form action="/qpg" method="get">
-          <p>
-            <button>Quiz</button>
-        </form>
-      <a href="{{logout_url}}">Log out</a><p>
-      {% else %}
-      <a class="login" href="{{login_url}}">Log in / Sign Up</a>
-      {% endif %}
+    <ul>
+      <li>
+        <span class="flor">
+          Floreciente
+        </span>
+      </li>
+      <li>
+        <span class="florslogan">
+          Cultivating Excellence
+        </span>
+      </li>
+      <li class="login">
+        {% if current_user %}
+        <h3 class="login"> Welcome, {{current_user}}!</h3>
+          <form action="/qpg" method="get">
+            <p>
+              <button>Quiz</button>
+          </form>
+        <a href="{{logout_url}}"> Log out </a><p>
+        {% else %}
+        <a class="login" href="{{login_url}}"> Log in / Sign Up </a>
+        {% endif %}
+    </li>
     </p>
   <br>
   <br>
@@ -24,10 +33,6 @@
   <div>
     <p class="quote">
         "{{quote}}"
+    </p>
   </div>
-  <div>
-  </div>
-
-
 </body>
-<script src="javascript/home.js"></script>

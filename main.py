@@ -9,7 +9,7 @@ from google.appengine.api import users
 class Student(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
-    birthday = ndb.DateProperty()
+    #birthday = ndb.DateProperty()
     #questions = ndb.StructuredProperty(Question, repeated=True)
 
 class Answer(ndb.Model):
@@ -30,7 +30,8 @@ env = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def pickquote(self):
-        return "hi"
+        randquote = Quote.query().get()
+        return randquote
         #query looku for quotes in database. use random function
         #to pick random index in list, pick quote to return the quote that
         #was selected
@@ -56,12 +57,12 @@ class MainPage(webapp2.RequestHandler):
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
 
-    # def post(self):
-    #     message = self.request.get('message')
-    #     username = self.request.get('username')
-    #     post = Post(message=message, username=username)
-    #     post.put()
-    #     self.redirect('/')
+    def post(self):
+        name = self.request.get('name') #<-- name is the name from the form
+        email = users.get_current_user().email()
+        student = Student(name=name, email=email)
+        student.put()
+        self.redirect('/')
 
 
 class QuestionPage(webapp2.RequestHandler):
@@ -69,7 +70,7 @@ class QuestionPage(webapp2.RequestHandler):
         qs = [
             #question 1
             {
-                'question' : 'blah blah blah',
+                'question' : 'What is your name?',
                 'answers' : ['a1', 'a2', 'a3'],
             },
             #question 2
@@ -78,7 +79,6 @@ class QuestionPage(webapp2.RequestHandler):
                 'answers' : ['a1', 'a2', 'a3'],
             },
         ]
-        print("hi")
         template = env.get_template("/templates/qpg.html")
         self.response.write(template.render(qs=qs))
 
