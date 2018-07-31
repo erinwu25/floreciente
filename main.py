@@ -12,7 +12,8 @@ class Student(ndb.Model):
     birthday = ndb.DateProperty()
     #questions = ndb.StructuredProperty(Question, repeated=True)
 
-class Question(ndb.Model):
+class Answer(ndb.Model):
+    student_key = ndb.KeyProperty()
     question = ndb.StringProperty()
     answer = ndb.IntegerProperty()
 
@@ -78,12 +79,16 @@ class QuestionPage(webapp2.RequestHandler):
                 'answers' : ['a1', 'a2', 'a3'],
             },
         ]
+        print("hi")
         template = env.get_template("/templates/qpg.html")
-        self.response.write(template.render())
+        self.response.write(template.render(qs=qs))
+
+    #def post(self):
+
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/questions', QuestionPage),
+    ('/qpg', QuestionPage),
 
 
 
