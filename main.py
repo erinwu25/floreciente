@@ -32,13 +32,13 @@ env = jinja2.Environment(
 
 
 class MainPage(webapp2.RequestHandler):
-    def pickquote(self):
+    #def pickquote(self):
         # TODO(yojairo): This is slow when we have a lot of quotes. Instead,
         # select a random index and get the Quote for that index.
-        randquotes = Quote.query().fetch()
-        randquote = random.choice(randquotes)
-        return randquote.content
-        return randquote.author
+        # randquotes = Quote.query().fetch()
+        # randquote = random.choice(randquotes)
+        # return randquote.content
+        # return randquote.author
         #query looku for quotes in database. use random function
         #to pick random index in list, pick quote to return the quote that
         #was selected
@@ -50,7 +50,7 @@ class MainPage(webapp2.RequestHandler):
         current_user = users.get_current_user()
         #if no one is logged in, show a login prompt
         if not current_user:
-            login_url = users.create_login_url('/')
+            login_url = users.create_login_url('/redirect')
         else:
             logout_url = users.create_logout_url('/')
         # posts = Post.query().fetch()
@@ -60,7 +60,7 @@ class MainPage(webapp2.RequestHandler):
             'current_user' : current_user,
             'login_url' : login_url,
             'logout_url' : logout_url,
-            'quote' : self.pickquote(),
+            #'quote' : self.pickquote(),
         }
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
@@ -71,6 +71,12 @@ class MainPage(webapp2.RequestHandler):
         student = Student(name=name, email=email)
         student.put()
         self.redirect('/')
+
+
+class RedirectPage(webapp2.RequestHandler):
+    def get (self):
+        template = env.get_template("/templates/main.html")
+        self.response.write(template.render())
 
 
 class QuestionPage(webapp2.RequestHandler):
@@ -96,6 +102,7 @@ class QuestionPage(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/qpg', QuestionPage),
+    ('/redirect', RedirectPage),
 
 
 
