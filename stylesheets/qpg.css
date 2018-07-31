@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  background-color: #6D7973;
+  color: #E7BAA0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+    display: inline;
+    float: left;
+}
+.flor {
+  color: #E5DACE;
+  padding-left: 15px;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.florslogan {
+  color: #B2B2A2;
+  padding-left: 5px;
+  font-weight: normal;
+}
+
+.form {
+  text-align: center;
+}
