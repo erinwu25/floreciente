@@ -38,9 +38,11 @@ class MainPage(webapp2.RequestHandler):
         randquotes = Quote.query().fetch()
         randquote = random.choice(randquotes)
         return randquote.content
+        return randquote.author
         #query looku for quotes in database. use random function
         #to pick random index in list, pick quote to return the quote that
         #was selected
+
     def get(self):
         login_url = ''
         logout_url = ''
