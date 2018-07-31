@@ -20,6 +20,9 @@ class Answer(ndb.Model):
 class Quote(ndb.Model):
     content = ndb.StringProperty()
     author = ndb.StringProperty()
+    # TODO(yojairo): Set an index on the quote and look up a random
+    # quote by the index. Increment this index each time we add a quote
+    # index = ndb.IntegerProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -30,8 +33,11 @@ env = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def pickquote(self):
-        randquote = Quote.query().get()
-        return randquote
+        # TODO(yojairo): This is slow when we have a lot of quotes. Instead,
+        # select a random index and get the Quote for that index.
+        randquotes = Quote.query().fetch()
+        randquote = random.choice(randquotes)
+        return randquote.content
         #query looku for quotes in database. use random function
         #to pick random index in list, pick quote to return the quote that
         #was selected
