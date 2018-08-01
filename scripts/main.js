@@ -4,9 +4,6 @@
 let button = document.querySelector('button');
 let p = document.querySelector('.lq1');
 
-alert("Hello! I am an alert box!!");
-
-
 button.addEventListener('click', e => {
   if(p.style.display == 'none'){
     p.style.display = 'block'; }
