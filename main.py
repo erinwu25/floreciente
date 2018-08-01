@@ -2,6 +2,7 @@ import webapp2
 import jinja2
 import os
 import random
+import logging
 
 from google.appengine.ext import ndb
 from google.appengine.api import users
@@ -12,10 +13,10 @@ class Student(ndb.Model):
     #birthday = ndb.DateProperty()
     #questions = ndb.StructuredProperty(Question, repeated=True)
 
-class Answer(ndb.Model):
-    student_key = ndb.KeyProperty()
-    question = ndb.StringProperty()
-    answer = ndb.IntegerProperty()
+# class Answer(ndb.Model):
+#     student_key = ndb.KeyProperty()
+#     question = ndb.StringProperty()
+#     answer = ndb.IntegerProperty()
 
 class Quote(ndb.Model):
     content = ndb.StringProperty()
@@ -68,6 +69,8 @@ class MainPage(webapp2.RequestHandler):
     def post(self):
         name = self.request.get('name') #<-- name is the name from the form
         email = users.get_current_user().email()
+        #logging.info(Student.query().filter(Student.email == email).get())
+        #if not Student.query().filter(Student.email == email).get():
         student = Student(name=name, email=email)
         student.put()
         self.redirect('/')
