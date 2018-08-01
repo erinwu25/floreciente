@@ -11,11 +11,13 @@
 <div class="questions">
 <form method=POST action="/">
     <h2>Have you visited any college campuses?</h2>
-    <p><input type="radio" name="grade" value="underclassman">I have not visited any college campuses.<br>
+    <p><input type="radio" name="place" value="no">I have not visited any college campuses.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I have been on a few college tours.<br>
+    <input type="radio" name="place" value="yes">I have been on a few college tours.<br>
     <br>
   </p>
+    <input type="hidden" name="stage" value="campus">
+
     <input type="submit" value="Next question"/>
 </form>
 </div>
