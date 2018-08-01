@@ -24,6 +24,11 @@ class Quote(ndb.Model):
     # TODO(yojairo): Set an index on the quote and look up a random
     # quote by the index. Increment this index each time we add a quote
     # index = ndb.IntegerProperty()
+class Resource(ndb.Model):
+    student_key = ndb.KeyProperty()
+    name = ndb.StringProperty()
+    description = ndb.StringProperty()
+    url = ndb.StringProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
