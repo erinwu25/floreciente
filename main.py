@@ -105,8 +105,8 @@ class QuestionPage(webapp2.RequestHandler):
                 template = env.get_template("templates/lowerq1.html")
                 self.response.write(template.render())
             else:
-                self.response.write('upperclassman')
-        #study habits
+                template = env.get_template("templates/lowerq1.html")
+                self.response.write(template.render())        #study habits
         elif stage == 'study':
             studyhabits = self.request.get('studyh')
             if  studyhabits == 'whenever' or studyhabits == 'not':
