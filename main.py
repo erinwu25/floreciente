@@ -66,14 +66,15 @@ class MainPage(webapp2.RequestHandler):
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
 
-    def post(self):
-        name = self.request.get('name') #<-- name is the name from the form
-        email = users.get_current_user().email()
-        #logging.info(Student.query().filter(Student.email == email).get())
-        #if not Student.query().filter(Student.email == email).get():
-        student = Student(name=name, email=email)
-        student.put()
-        self.redirect('/')
+    # def post(self):
+    #     name = self.request.get('name') #<-- name is the name from the form
+    #     email = users.get_current_user().email()
+    #     logging.info('I am here')
+    #     #logging.info(Student.query().filter(Student.email == email).get())
+    #     #if not Student.query().filter(Student.email == email).get():
+    #     student = Student(name=name, email=email)
+    #     student.put()
+    #     self.redirect('/')
 
 
 class RedirectPage(webapp2.RequestHandler):
@@ -103,6 +104,13 @@ class QuestionPage(webapp2.RequestHandler):
         stage = self.request.get('stage')
         #intro
         if stage == 'intro':
+            name = self.request.get('name') #<-- name is the name from the form
+            email = users.get_current_user().email()
+            logging.info('I am here')
+            if not Student.query().filter(Student.email == email).get():
+                student = Student(name=name, email=email)
+                student.put()
+
             year = self.request.get('grade')
             if year == 'underclassman':
                 template = env.get_template("templates/lowerq1.html")
