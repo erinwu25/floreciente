@@ -26,7 +26,7 @@ class Quote(ndb.Model):
     # index = ndb.IntegerProperty()
 class Resource(ndb.Model):
     student_key = ndb.KeyProperty()
-    name = ndb.StringProperty()
+    #name = ndb.StringProperty()
     description = ndb.StringProperty()
     url = ndb.StringProperty()
 
@@ -107,12 +107,14 @@ class QuestionPage(webapp2.RequestHandler):
 
     def post(self):
         stage = self.request.get('stage')
+        email = users.get_current_user().email()
+        current_student = Student.query().filter(Student.email == email).get()
         #intro
         if stage == 'intro':
             name = self.request.get('name') #<-- name is the name from the form
-            email = users.get_current_user().email()
+
             logging.info('I am here')
-            if not Student.query().filter(Student.email == email).get():
+            if not current_student:
                 student = Student(name=name, email=email)
                 student.put()
 
@@ -125,8 +127,11 @@ class QuestionPage(webapp2.RequestHandler):
                 self.response.write(template.render())
         #study habits - lower
         elif stage == 'study':
+            logging.info('working')
             studyhabits = self.request.get('studyh')
-            if  studyhabits == 'whenever' or studyhabits == 'not':
+            logging.info(studyhabits)
+            if studyhabits == 'whenever' or studyhabits == 'not':
+                Resource(student_key=current_student.key, description='Study Tips', url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
                 template = env.get_template("templates/lowerresource1.html")
                 self.response.write(template.render())
             else:

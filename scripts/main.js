@@ -2,7 +2,9 @@
 // let dictionary = document.querySelector('#dictionary');
 // let iframe = document.querySelector('iframe');
 let button = document.querySelector('button');
-let p = document.querySelector('.lq1');
+let a = document.querySelector('.lq1');
+let b = document.querySelector('.lq2');
+let c = document.querySelector('.lq3');
 
 button.addEventListener('click', e => {
   if(p.style.display == 'none'){
