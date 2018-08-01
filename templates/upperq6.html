@@ -11,12 +11,15 @@
 <div class="questions">
 <form method=POST action="/">
     <h2>Have you began your FAFSA/Dream Act Application?</h2>
-    <p><input type="radio" name="grade" value="underclassman">I have not began my financial aid application.<br>
+    <p><input type="radio" name="finaid" value="notstarted">I have not began my financial aid application.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I have started or completed my financial aid application.<br>
+    <input type="radio" name="finaid" value="started">I have started or completed my financial aid application.<br>
     <br>
   </p>
+    <input type="hidden" name="stage" value="FAFSA">
+
     <input type="submit" value="Next question"/>
 </form>
 </div>
-<p>{{qs[0]['question']}}<p>
+
+<script src="/scripts/main.js"></script>

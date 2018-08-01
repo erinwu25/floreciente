@@ -9,15 +9,18 @@
       </span>
     </p>
 <div class="questions">
-<form method=POST action="/">
+<form method=POST>
     <h2>Have you began applying to colleges?</h2>
-    <p><input type="radio" name="grade" value="underclassman">I have started my college applications.<br>
+    <p><input type="radio" name="apply" value="started">I have started my college applications.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I have not began applying to colleges.
+    <input type="radio" name="apply" value="notstarted">I have not began applying to colleges.
     <br>
     <br>
   </p>
+    <input type="hidden" name="stage" value="applying">
+
     <input type="submit" value="Next question"/>
 </form>
 </div>
-<p>{{qs[0]['question']}}<p>
+
+<script src="/scripts/main.js"></script>

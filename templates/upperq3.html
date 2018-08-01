@@ -9,14 +9,17 @@
       </span>
     </p>
 <div class="questions">
-<form method=POST action="/">
+<form method=POST>
     <h2>Have you taken any SAT/ACT tests yet?</h2>
-    <p><input type="radio" name="grade" value="underclassman">No, I have yet to take any standardized testing.<br>
+    <p><input type="radio" name="testing" value="no">No, I have yet to take any standardized testing.<br>
     <br>
-    <input type="radio" name="grade" value="upperclassman">I have began taking standardized tests.<br>
+    <input type="radio" name="testing" value="yes">I have began taking standardized tests.<br>
     <br>
   </p>
+    <input type="hidden" name="stage" value="SAT">
+
     <input type="submit" value="Next question"/>
 </form>
 </div>
-<p>{{qs[0]['question']}}<p>
+
+<script src="/scripts/main.js"></script>
