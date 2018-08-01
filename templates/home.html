@@ -41,9 +41,18 @@
         </button>
       </form>
   </div>
-        {% else %}
-          <a class="login" href="{{login_url}}"> Log in / Sign Up </a>
-          <br>
-        {% endif %}
-      </li>
+    {% else %}
+      <a class="login" href="{{login_url}}"> Log in / Sign Up </a>
+      <br><br><br>
+      <div class="imagebox">
+        <img class="authorimage" src="images/malcolm.jpg">
+      </div>
+        <p class="quote">
+          "{{quote}}"
+        </p>
+        <p class="author">
+          - {{author}}
+        </p>
+      {% endif %}
+  </li>
 </body>

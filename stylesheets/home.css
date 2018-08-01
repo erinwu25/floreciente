@@ -36,12 +36,26 @@ li {
   text-decoration: none;
 }
 
+.imagebox {
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.authorimage {
+  width: 150px;
+  border-radius: 50%;
+  border: 7.5px solid #E5DACE;
+}
 .quote {
   text-align: center;
   color: #E7BAA0;
 }
 .author {
   text-align: center;
+  padding-left: 300px;
   color: #E7BAA0;
 
 }
