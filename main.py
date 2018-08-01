@@ -154,59 +154,59 @@ class QuestionPage(webapp2.RequestHandler):
                 self.response.write(template.render())
 #######upper######
         #applying - upper
-        elif stage == 'study':
-            apply = self.request.get('apply')
-            if  apply == 'notstarted':
-                template = env.get_template("templates/lowerresource1.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq2.html")
-                self.response.write(template.render())
+        elif stage == 'applying':
+                apply = self.request.get('apply')
+                if  apply == 'notstarted':
+                    template = env.get_template("templates/lowerresource1.html")
+                    self.response.write(template.render())
+                else:
+                    template = env.get_template("templates/upperq2.html")
+                    self.response.write(template.render())
         #scholarships - upper
-    elif stage == 'scholarships':
-            funds = self.request.get('funds')
-            if  funds == 'havenot':
-                template = env.get_template("templates/lowerresource2.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq3.html")
-                self.response.write(template.render())
-        #SAT - upper
-    elif stage == 'SAT':
-            testing = self.request.get('testing')
-            if  testing == 'no':
-                template = env.get_template("templates/lowerresource3.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq4.html")
-                self.response.write(template.render())
-        #campus - upper
-    elif stage == 'campus':
-            place = self.request.get('place')
-            if  place == 'no':
-                template = env.get_template("templates/lowerresource4.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq5.html")
-                self.response.write(template.render())
-        #essays - upper
-    elif stage == 'essays':
-            essay = self.request.get('essay')
-            if  essay == 'havenot':
-                template = env.get_template("templates/lowerresource5.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq6.html")
-                self.response.write(template.render())
-        #FAFSA - upper
-    elif stage == 'FAFSA':
-            finaid = self.request.get('finaid')
-            if  finaid == 'notstarted':
-                template = env.get_template("templates/lowerresource5.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq6.html")
-                self.response.write(template.render())
+        elif stage == 'scholarships':
+                funds = self.request.get('funds')
+                if  funds == 'havenot':
+                    template = env.get_template("templates/lowerresource2.html")
+                    self.response.write(template.render())
+                else:
+                    template = env.get_template("templates/upperq3.html")
+                    self.response.write(template.render())
+            #SAT - upper
+        elif stage == 'SAT':
+                testing = self.request.get('testing')
+                if  testing == 'no':
+                    template = env.get_template("templates/lowerresource3.html")
+                    self.response.write(template.render())
+                else:
+                    template = env.get_template("templates/upperq4.html")
+                    self.response.write(template.render())
+            #campus - upper
+        elif stage == 'campus':
+                place = self.request.get('place')
+                if  place == 'no':
+                    template = env.get_template("templates/lowerresource4.html")
+                    self.response.write(template.render())
+                else:
+                    template = env.get_template("templates/upperq5.html")
+                    self.response.write(template.render())
+            #essays - upper
+        elif stage == 'essays':
+                essay = self.request.get('essay')
+                if  essay == 'havenot':
+                    template = env.get_template("templates/lowerresource5.html")
+                    self.response.write(template.render())
+                else:
+                    template = env.get_template("templates/upperq6.html")
+                    self.response.write(template.render())
+            #FAFSA - upper
+        elif stage == 'FAFSA':
+                finaid = self.request.get('finaid')
+                if  finaid == 'notstarted':
+                    template = env.get_template("templates/lowerresource5.html")
+                    self.response.write(template.render())
+                else:
+                    template = env.get_template("templates/lowerq6.html")
+                    self.response.write(template.render())
 
 
 
