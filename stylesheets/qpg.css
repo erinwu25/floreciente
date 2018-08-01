@@ -2,8 +2,8 @@
 body {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
-  background-color: #6D7973;
-  color: #E7BAA0;
+  background-color: #233142;
+  color: white;
 }
 
 ul {
@@ -15,19 +15,76 @@ li {
     display: inline;
     float: left;
 }
+
 .flor {
-  color: #E5DACE;
+  color: #facf5a;
   padding-left: 15px;
   font-weight: bold;
   list-style-type: none;
 }
 
 .florslogan {
-  color: #B2B2A2;
+  color: #f95959;
   padding-left: 5px;
   font-weight: normal;
 }
 
+.welcome {
+  text-decoration: none;
+  float: right;
+  color: white;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.logout {
+  float: right;
+  padding-right: 10px;
+  color: #facf5a;
+  font-size: 25px;
+  text-decoration: none;
+}
+
 .form {
   text-align: center;
+}
+
+.box {
+  height:30px;
+  font-size:12pt;
+  background-color: white;
+  border-color: white;
+  text-align: center;
+  color: black;
+  font-family: "Quicksand",sans-serif;
+  font-weight: bold;
+}
+
+.box:focus {
+  outline:none;
+   border-color: #E5DACE;
+   box-shadow: 5px #E5DACE;
+}
+
+.linez {
+  vertical-align: middle;
+}
+
+.button {
+  width: 60px;
+  height: auto;
+  background-color: white;
+  border-color: white;
+  color: #233142;
+  border-radius: 5%;
+  text-align: center;
+  font-family: "Quicksand",sans-serif;
+  font-weight: bold;
+}
+
+.button:focus {
+    outline: none;
+     border-color: #E5DACE;
+     box-shadow: 5px #E5DACE;
 }
