@@ -15,6 +15,19 @@ li {
     display: inline;
     float: left;
 }
+
+img {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#scale {
+  width: 100px;
+  height: auto;
+}
 .flor {
   color: #E5DACE;
   padding-left: 15px;
@@ -37,27 +50,27 @@ li {
 }
 
 .imagebox {
+  display: inline-block;
+  overflow:hidden;
+  width:150px;
   height: 150px;
-  width: 150px;
+  border-radius: 50%;
+  border: 8px solid #B5BAB8;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.authorimage {
-  width: 150px;
-  border-radius: 50%;
-  border: 7.5px solid #E5DACE;
-}
 .quote {
   text-align: center;
-  color: #E7BAA0;
+  color: #D5CBC8;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .author {
   text-align: center;
-  padding-left: 300px;
-  color: #E7BAA0;
-
+  padding-left: 500px;
+  color: #FFFAF8;
 }
 
 .welcome {
