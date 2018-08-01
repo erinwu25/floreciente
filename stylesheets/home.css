@@ -2,7 +2,7 @@
 body {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
-  background-color: #6D7973;
+  background-color: #233142;
   color: white;
 }
 
@@ -29,14 +29,14 @@ img {
   height: auto;
 }
 .flor {
-  color: #E5DACE;
+  color: #facf5a;
   padding-left: 15px;
   font-weight: bold;
   list-style-type: none;
 }
 
 .florslogan {
-  color: #B2B2A2;
+  color: #f95959;
   padding-left: 5px;
   font-weight: normal;
 }
@@ -44,8 +44,9 @@ img {
 .login {
   float: right;
   padding-right: 10px;
-  color: #E5DACE;
+  color: #facf5a;
   font-size: 25px;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -55,7 +56,7 @@ img {
   width:150px;
   height: 150px;
   border-radius: 50%;
-  border: 8px solid #B5BAB8;
+  border: 7px solid #455d7a;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -63,20 +64,20 @@ img {
 
 .quote {
   text-align: center;
-  color: #D5CBC8;
+  color: white;
   padding-left: 100px;
   padding-right: 100px;
 }
 .author {
   text-align: center;
   padding-left: 500px;
-  color: #FFFAF8;
+  color: white;
 }
 
 .welcome {
   text-decoration: none;
   float: right;
-  color: #E7BAA0;
+  color: white;
   font-size: 25px;
   text-align: right;
   padding-right: 15px;
@@ -85,7 +86,7 @@ img {
 .logout {
   text-decoration: none;
   float: right;
-  color: #E5DACE;
+  color: #facf5a;
   font-size: 25px;
   text-align: right;
   padding-right: 15px;
@@ -100,21 +101,21 @@ img {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  color: #FFFAF4;
+  color: white;
 }
 
 .abovebutton {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
   text-align: center;
-  color: #FFFAF4;
+  color: white;
   padding-left: 100px;
   padding-right: 100px;
 }
 .button {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
-  background-color: #C2A59F;
+  background-color: #facf5a;
   border: none;
   color: white;
   padding: 20px 50px;

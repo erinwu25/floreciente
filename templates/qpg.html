@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <title>Floreciente | Start </title>
 <link rel="stylesheet" type="text/css" href="/stylesheets/qpg.css">
-<link rel="icon" href="rose.jpg">
-
+<link rel="icon" href="images/rose.jpg">
 <body>
   <div>
     <ul>
@@ -16,6 +15,11 @@
           Cultivating Excellence
         </span>
       </li>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
     </ul>
   </div>
   <br>
@@ -24,15 +28,21 @@
       <p>
         What is your name?
       </p>
-      <input name="name"><p>
+      <input class="box"name="name">
       <p>What grade are you in?</p>
-      <input type="checkbox" name="grade" value="underclassman">
-        9th-10th
-      </input>
-      <input type="checkbox" name="grade" value="upperclassman">11th-12th</input>
+      <p>
+        <input class="linez" type="radio" name="grade" value="underclassman">
+          9th-10th
+        </input>
+      </p>
+      <p>
+        <input class="linez" type="radio" name="grade" value="upperclassman">
+        11th-12th
+        </input>
+      </p>
       <input type="hidden" name="stage" value="intro">
       <p>
-      <input type="submit" value="Submit"/>
+      <input class="button" type="submit" value="Submit"/>
     </form>
   </div>
 </body>
