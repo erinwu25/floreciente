@@ -13,6 +13,31 @@ button.addEventListener('click', e => {
   }
 });
 
+let often = document.querySelector('#often')
+often.addEventListener('click', e => {
+  if(p.style.display == 'none'){
+    p.style.display = 'block'; }
+  else{
+     p.style.display = 'none';
+  }
+});
+
+let whenever = document.querySelector('#whenever')
+whenever.addEventListener('click', e => {
+  if(p.style.display == 'none'){
+    p.style.display = 'block'; }
+  else{
+     p.style.display = 'none';
+  }
+});
+let not = document.querySelector('#not')
+not.addEventListener('click', e => {
+  if(p.style.display == 'none'){
+    p.style.display = 'block'; }
+  else{
+     p.style.display = 'none';
+  }
+});
 //wikipedia.remove();
 //wikipedia.innerText = 'Google.com';
 // wikipedia.style.backgroundColor = 'pink'
