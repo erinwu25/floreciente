@@ -174,8 +174,7 @@ class QuestionPage(webapp2.RequestHandler):
                 if not resource_check:
                     Resource(student_key=current_student.key, description=careerdescription, url='https://www.princetonreview.com/quiz/career-quiz').put()
 
-            template = env.get_template("templates/checklist.html")
-            self.response.write(template.render())
+            self.redirect('/checklist')
 #######upper######
         #applying - upper
         elif stage == 'applying':
