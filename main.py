@@ -135,7 +135,7 @@ class QuestionPage(webapp2.RequestHandler):
             studyhabits = self.request.get('studyh')
             tips = 'Study Tips'
             resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == tips).get()
-            #logging.info(studyhabits)
+
             if studyhabits == 'whenever' or studyhabits == 'not':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=tips, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
@@ -147,7 +147,12 @@ class QuestionPage(webapp2.RequestHandler):
         #extracurriculars - lower
         elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
-            if  excs == 'no':
+            ecs = 'Extracurriculars'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == ecs).get()
+
+            if excs == 'no':
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=ecs, url='https://www.fastweb.com/student-life/articles/impressive-extracurriculars').put()
                 template = env.get_template("templates/lowerresource2.html")
                 self.response.write(template.render())
             else:
@@ -156,7 +161,12 @@ class QuestionPage(webapp2.RequestHandler):
         #classes - lower
         elif stage == 'classes':
             classes = self.request.get('classes')
-            if  classes == 'not':
+            classdescription = 'Classes'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == classdescription).get()
+
+            if classes == 'not':
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=classdescription, url='https://apstudent.collegeboard.org/apcourse').put()
                 template = env.get_template("templates/lowerresource3.html")
                 self.response.write(template.render())
             else:
@@ -165,8 +175,12 @@ class QuestionPage(webapp2.RequestHandler):
         #psat - lower
         elif stage == 'psat':
             psat = self.request.get('psat')
+            psatdescription = 'PSAT'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == psatdescription).get()
             if  psat == 'no':
-                template = env.get_template("templates/lowerresource4.html")
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=psatdescription, url='https://collegereadiness.collegeboard.org/psat-nmsqt-psat-10/inside-the-test').put()
+                template = env.get_template("templates/lowerq5.html")
                 self.response.write(template.render())
             else:
                 template = env.get_template("templates/lowerq5.html")
@@ -174,7 +188,11 @@ class QuestionPage(webapp2.RequestHandler):
         #careers - lower
         elif stage == 'careers':
             career = self.request.get('career')
+            careerdescription = 'Career Quiz'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == careerdescription).get()
             if  career == 'no':
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=careerdescription, url='https://www.princetonreview.com/quiz/career-quiz').put()
                 template = env.get_template("templates/lowerresource5.html")
                 self.response.write(template.render())
             else:
@@ -184,6 +202,8 @@ class QuestionPage(webapp2.RequestHandler):
         #applying - upper
         elif stage == 'applying':
                 apply = self.request.get('apply')
+                applicationdescription = 'Application Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == careerdescription).get()
                 if  apply == 'notstarted':
                     template = env.get_template("templates/lowerresource1.html")
                     self.response.write(template.render())
