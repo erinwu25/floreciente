@@ -59,27 +59,13 @@ class MainPage(webapp2.RequestHandler):
             login_url = users.create_login_url('/')
         else:
             logout_url = users.create_logout_url('/')
-        # posts = Post.query().fetch()
-        # post_query = Post.query()
-        # post_query = post_query.order(Post.created_time)
         templateVars = {
             'current_user' : current_user,
             'login_url' : login_url,
             'logout_url' : logout_url,
-            #'quote' : self.pickquote(),
         }
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
-
-    # def post(self):
-    #     name = self.request.get('name') #<-- name is the name from the form
-    #     email = users.get_current_user().email()
-    #     logging.info('I am here')
-    #     #logging.info(Student.query().filter(Student.email == email).get())
-    #     #if not Student.query().filter(Student.email == email).get():
-    #     student = Student(name=name, email=email)
-    #     student.put()
-    #     self.redirect('/')
 
 
 class ChecklistPage(webapp2.RequestHandler):
@@ -90,7 +76,6 @@ class ChecklistPage(webapp2.RequestHandler):
 
         templateVars = {
             'resource_list' : resource_list,
-
         }
         template = env.get_template("/templates/checklist.html")
         self.response.write(template.render(templateVars))
@@ -113,6 +98,7 @@ class QuestionPage(webapp2.RequestHandler):
         stage = self.request.get('stage')
         email = users.get_current_user().email()
         current_student = Student.query().filter(Student.email == email).get()
+        logging.info(stage)
         #intro
         if stage == 'intro':
             name = self.request.get('name') #<-- name is the name from the form
@@ -133,12 +119,12 @@ class QuestionPage(webapp2.RequestHandler):
         elif stage == 'study':
             logging.info('working')
             studyhabits = self.request.get('studyh')
-            tips = 'Study Tips'
-            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == tips).get()
+            studydescription = 'Study Tips'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == studydescription).get()
 
             if studyhabits == 'whenever' or studyhabits == 'not':
                 if not resource_check:
-                    Resource(student_key=current_student.key, description=tips, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
+                    Resource(student_key=current_student.key, description=studydescription, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
             template = env.get_template("templates/lowerq2.html")
             self.response.write(template.render())
             # else:
@@ -147,12 +133,12 @@ class QuestionPage(webapp2.RequestHandler):
         #extracurriculars - lower
         elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
-            ecs = 'Extracurriculars'
-            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == ecs).get()
+            ecsdescription = 'Extracurriculars'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == ecsdescription).get()
 
             if excs == 'no':
                 if not resource_check:
-                    Resource(student_key=current_student.key, description=ecs, url='https://www.fastweb.com/student-life/articles/impressive-extracurriculars').put()
+                    Resource(student_key=current_student.key, description=ecsdescription, url='https://www.fastweb.com/student-life/articles/impressive-extracurriculars').put()
 
             template = env.get_template("templates/lowerq3.html")
             self.response.write(template.render())
@@ -254,16 +240,15 @@ class QuestionPage(webapp2.RequestHandler):
                 if  finaid == 'notstarted':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=finaiddescription, url='https://fafsa.ed.gov/').put()
-
-                template = env.get_template("templates/checklist.html")
-                self.response.write(template.render())
+                self.redirect('/checklist')
+                # template = env.get_template("templates/checklist.html")
+                # self.response.write(template.render())
 
 
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/qpg', QuestionPage),
-    #('/redirect', RedirectPage),
     ('/resource', ResourceHandler),
     ('/checklist', ChecklistPage),
 
