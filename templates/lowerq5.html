@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<title>Questions</title>
+<title>Questions | Careers </title>
 <link rel="stylesheet" type="text/css" href="/stylesheets/questions.css">
 <body>
   <div>
-    <p class="flor"> Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-    </p>
+    <ul>
+      <li class="flor">
+        Floreciente
+      </li>
+      <li class="florslogan">
+          Cultivating Excellence
+      </li>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <br>
 <div class="questions">
 <form method=POST>
     <h2>Have you began researching potential careers that interest you?</h2>
-    <p><input type="radio" name="career" value="no">I have not found any careers that suit my interest.<br>
+    <p><input type="button" class="button" name="career" value="I have not found any careers that suit my interest."><br>
     <br>
-    <input type="radio" name="career" value="yes">I have come across some careers that I find interesting.<br>
+    <input type="button" class="option" name="career" value="I have come across some careers that I find interesting."><br>
     <br>
   </p>
-    <input type="submit" value="Next question"/>
+    <input type="submit" class="nextButton" value="Next question"/>
 </form>
     <input type="hidden" name="stage" value="careers">
 </div>

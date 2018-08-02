@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<title>Questions</title>
+<title>Questions | Essays </title>
 <link rel="stylesheet" type="text/css" href="/stylesheets/questions.css">
 <body>
   <div>
-    <p class="flor"> Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-    </p>
+    <ul>
+      <li class="flor">
+        Floreciente
+      </li>
+      <li class="florslogan">
+          Cultivating Excellence
+      </li>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <br>
 <div class="questions">
 <form method=POST>
     <h2>Have you began writing your essays for college applications?</h2>
-    <p><input type="radio" name="essay" value="have">I have began writing my essays for college applications.<br>
+    <p><input type="button" class="option" name="essay" value="I have began writing my essays for college applications."><br>
     <br>
-    <input type="radio" name="essay" value="havenot">I have not created any essays, yet.<br>
+    <input type="button" class="option" name="essay" value="I have not created any essays, yet."><br>
     <br>
   </p>
     <input type="hidden" name="stage" value="essays">
 
-    <input type="submit" value="Next question"/>
+    <input type="submit" class="nextButton" value="Next question"/>
 </form>
 </div>
 

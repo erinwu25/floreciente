@@ -3,6 +3,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
   background-color: #233142;
+  text-align: center;
   color: white;
 }
 
@@ -82,46 +83,22 @@ li {
   vertical-align: middle;
 }
 
-.button {
-  width: 60px;
-  height: auto;
-  background-color: white;
-  border-color: white;
-  color: #233142;
-  border-radius: 5%;
-  text-align: center;
-  font-family: "Quicksand",sans-serif;
-  font-weight: bold;
+.option{
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      background-color: white;
+      border: white;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-size: 16px;
+      text-color: white;
+      cursor: pointer;
+      display: inline-block;
 }
-
-.button:focus {
-    outline: none;
-     border-color: #E5DACE;
-     box-shadow: 5px #E5DACE;
-}
-
-.btn {
-    border: none;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: white;
-    border-radius: 8px;
-    padding: 14px 28px;
-    font-size: 16px;
-    text-color: white;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px solid lightpink
-
-}
-
-
-
-.btn:hover {
-    background-color: black;
-    color: white;
-}
+.option:hover {
+    background-color: #facf5a;
+  }
 
 .nextButton{
   border: none;
@@ -135,50 +112,7 @@ li {
   font-color: white;
   cursor: pointer;
   display: inline-block;
-  border: 2px solid black;
 }
 .nextButton:hover {
-    background-color: lightpink;
-    color: white;
-}
-.option {
-    border: none;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: white;
-    border-radius: 8px;
-    padding: 14px 28px;
-    font-size: 16px;
-    text-color: white;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px solid lightpink
-
-}
-
-
-
-.btn:hover {
-    background-color: black;
-    color: white;
-}
-
-.nextButton{
-  border: none;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: white;
-  border-radius: 8px;
-  padding: 12px 8px;
-  font-size: 16px;
-  font-color: white;
-  cursor: pointer;
-  display: inline-block;
-  border: 2px solid black;
-}
-.nextButton:hover {
-    background-color: lightpink;
-    color: white;
+    background-color: #f95959;
 }

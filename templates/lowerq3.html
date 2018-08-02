@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<title>Questions</title>
+<title>Questions | Classes </title>
 <link rel="stylesheet" type="text/css" href="/stylesheets/questions.css">
 <body>
   <div>
-    <p class="flor"> Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-    </p>
+    <ul>
+      <li class="flor">
+        Floreciente
+      </li>
+      <li class="florslogan">
+          Cultivating Excellence
+      </li>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <br>
 <div class="questions">
 <form method=POST>
     <h2>Have you began taking any challenging courses such as AP/IB/Honors classes?</h2>
-    <p><input type="radio" name="classes" value="ontrack">I have taken some AP/IB courses so far.<br>
+    <p><input type="button" class="option" name="classes" value="I have taken some AP/IB courses so far."><br>
     <br>
-    <input type="radio" name="classes" value="not">I am not taking any AP/IB/Honors courses.
-    at my school.<br>
+    <input type="button" class="option" name="classes" value="I am not taking any AP/IB/Honors courses at my school."><br>
     <br>
   </p>
-    <input type="submit" value="Next question"/>
+    <input type="submit" class="nextButton" value="Next question"/>
 </form>
     <input type="hidden" name="stage" value="classes">
 </div>

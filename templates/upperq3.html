@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<title>Questions</title>
+<title>Questions | Testing </title>
 <link rel="stylesheet" type="text/css" href="/stylesheets/questions.css">
 <body>
   <div>
-    <p class="flor"> Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-    </p>
+    <ul>
+      <li class="flor">
+        Floreciente
+      </li>
+      <li class="florslogan">
+          Cultivating Excellence
+      </li>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <br>
 <div class="questions">
 <form method=POST>
     <h2>Have you taken any SAT/ACT tests yet?</h2>
-    <p><input type="radio" name="testing" value="no">No, I have yet to take any standardized testing.<br>
+    <p><input type="button" class="option" name="testing" value="No, I have yet to take any standardized testing."><br>
     <br>
-    <input type="radio" name="testing" value="yes">I have began taking standardized tests.<br>
+    <input type="button" class="option" name="testing" value="I have began taking standardized tests."><br>
     <br>
   </p>
     <input type="hidden" name="stage" value="SAT">
 
-    <input type="submit" value="Next question"/>
+    <input type="submit" class="nextButton" value="Next question"/>
 </form>
 </div>
 

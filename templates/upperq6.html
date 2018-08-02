@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<title>Questions</title>
+<!DOCTYPE html>
+<title>Questions | FAFSA </title>
 <link rel="stylesheet" type="text/css" href="/stylesheets/questions.css">
 <body>
   <div>
-    <p class="flor"> Floreciente
-      <span class="florslogan">
-        Cultivating Excellence
-      </span>
-    </p>
+    <ul>
+      <li class="flor">
+        Floreciente
+      </li>
+      <li class="florslogan">
+          Cultivating Excellence
+      </li>
+      <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <br>
 <div class="questions">
 <form method=POST action="/">
     <h2>Have you began your FAFSA/Dream Act Application?</h2>
-    <p><input type="radio" name="finaid" value="notstarted">I have not began my financial aid application.<br>
+    <p><input type="button" class="option" name="finaid" value="I have not began my financial aid application."><br>
     <br>
-    <input type="radio" name="finaid" value="started">I have started or completed my financial aid application.<br>
+    <input type="button" class="option" name="finaid" value="I have started or completed my financial aid application."><br>
     <br>
   </p>
     <input type="hidden" name="stage" value="FAFSA">
 
-    <input type="submit" value="Next question"/>
+    <input type="submit" class="nextButton" value="Next question"/>
 </form>
 </div>
 
