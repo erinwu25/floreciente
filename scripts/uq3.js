@@ -1,7 +1,7 @@
-let sat = document.querySelector('#');
-let satdescription = document.querySelector('.')
-let nosat = document.querySelector('#');
-let nosatdescription = document.querySelector('.')
+let sat = document.querySelector('#sat');
+let satdescription = document.querySelector('.satdescription')
+let nosat = document.querySelector('#nosat');
+let nosatdescription = document.querySelector('.nosatdescription')
 
 sat.addEventListener('click', e => {
   nosatdescription.style.display = 'none';

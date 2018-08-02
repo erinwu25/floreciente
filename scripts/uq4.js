@@ -1,14 +1,14 @@
 let novisit = document.querySelector('#novisit');
-let novisitdescription = document.querySelector('.')
+let novisitdescription = document.querySelector('.novisitdescription');
 let visit = document.querySelector('#visit');
-let novisitdescription = document.querySelector('.')
+let visitdescription = document.querySelector('.visitdescription');
 
-.addEventListener('click', e => {
-  .style.display = 'none';
-  .style.display = 'block';
+novisit.addEventListener('click', e => {
+  visitdescription.style.display = 'none';
+  novisitdescription.style.display = 'block';
 });
 
-.addEventListener('click', e => {
-  .style.display = 'none';
-  .style.display = 'block';
+visit.addEventListener('click', e => {
+  novisitdescription.style.display = 'none';
+  visitdescription.style.display = 'block';
 });
