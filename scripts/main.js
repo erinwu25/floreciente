@@ -7,20 +7,20 @@ let b = document.querySelector('.lq2');
 let c = document.querySelector('.lq3');
 
 button.addEventListener('click', e => {
-  if(p.style.display == 'none'){
-    p.style.display = 'block'; }
+  if(a.style.display == 'none'){
+    a.style.display = 'block'; }
   else{
-     p.style.display = 'none';
+     a.style.display = 'none';
 
   }
 });
 
 let often = document.querySelector('#often')
 often.addEventListener('click', e => {
-  if(p.style.display == 'none'){
-    p.style.display = 'block'; }
+  if(a.style.display == 'none'){
+    a.style.display = 'block'; }
   else{
-     p.style.display = 'none';
+     a.style.display = 'none';
   }
 });
 
