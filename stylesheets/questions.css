@@ -88,13 +88,13 @@ li {
       transition-duration: 0.4s;
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
       background-color: white;
+      border: white;
       border-radius: 8px;
       padding: 14px 28px;
       font-size: 16px;
       text-color: white;
       cursor: pointer;
       display: inline-block;
-      border: 2px solid #f95959
 }
 .option:hover {
     background-color: #facf5a;
@@ -112,7 +112,6 @@ li {
   font-color: white;
   cursor: pointer;
   display: inline-block;
-  border: 2px solid black;
 }
 .nextButton:hover {
     background-color: #f95959;
