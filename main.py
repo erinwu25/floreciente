@@ -10,13 +10,6 @@ from google.appengine.api import users
 class Student(ndb.Model):
     name = ndb.StringProperty()
     email = ndb.StringProperty()
-    #birthday = ndb.DateProperty()
-    #questions = ndb.StructuredProperty(Question, repeated=True)
-
-# class Answer(ndb.Model):
-#     student_key = ndb.KeyProperty()
-#     question = ndb.StringProperty()
-#     answer = ndb.IntegerProperty()
 
 class Quote(ndb.Model):
     content = ndb.StringProperty()
@@ -240,8 +233,6 @@ class QuestionPage(webapp2.RequestHandler):
                     if not resource_check:
                         Resource(student_key=current_student.key, description=finaiddescription, url='https://fafsa.ed.gov/').put()
                 self.redirect('/checklist')
-                # template = env.get_template("templates/checklist.html")
-                # self.response.write(template.render())
 
 
 
