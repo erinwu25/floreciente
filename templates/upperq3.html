@@ -21,9 +21,13 @@
 <div class="questions">
 <form method=POST>
     <h2>Have you taken any SAT/ACT tests yet?</h2>
-    <p><input type="button" class="option" name="testing" value="No, I have yet to take any standardized testing."><br>
+    <label class="option">
+    <input type="radio" name="testing" value="no">No, I have yet to take any standardized testing.<br>
+    </label>
     <br>
-    <input type="button" class="option" name="testing" value="I have began taking standardized tests."><br>
+    <label class="option">
+    <input type="radio" name="testing" value="yes">I have began taking standardized tests.<br>
+  </label>
     <br>
   </p>
     <input type="hidden" name="stage" value="SAT">

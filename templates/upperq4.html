@@ -21,9 +21,15 @@
 <div class="questions">
 <form method=POST>
     <h2>Have you visited any college campuses?</h2>
-    <p><input type="button" class="option" name="place" value="I have not visited any college campuses."><br>
+    <label class="option">
+      <input type="radio" name="place" value="no">I have not visited any college campuses.<br>
+    </label>
+
     <br>
-    <input type="button" class="option" name="place" value="I have been on a few college tours."><br>
+    <label class="option">
+      <input type="radio" name="place" value="yes">I have been on a few college tours.<br>
+    </label>
+
     <br>
   </p>
     <input type="hidden" name="stage" value="campus">

@@ -135,7 +135,7 @@ class QuestionPage(webapp2.RequestHandler):
             studyhabits = self.request.get('studyh')
             tips = 'Study Tips'
             resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == tips).get()
-            #logging.info(studyhabits)
+
             if studyhabits == 'whenever' or studyhabits == 'not':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=tips, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
@@ -147,7 +147,12 @@ class QuestionPage(webapp2.RequestHandler):
         #extracurriculars - lower
         elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
-            if  excs == 'no':
+            ecs = 'Extracurriculars'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == ecs).get()
+
+            if excs == 'no':
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=ecs, url='https://www.fastweb.com/student-life/articles/impressive-extracurriculars').put()
                 template = env.get_template("templates/lowerresource2.html")
                 self.response.write(template.render())
             else:
@@ -156,7 +161,12 @@ class QuestionPage(webapp2.RequestHandler):
         #classes - lower
         elif stage == 'classes':
             classes = self.request.get('classes')
-            if  classes == 'not':
+            classdescription = 'Classes'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == classdescription).get()
+
+            if classes == 'not':
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=classdescription, url='https://apstudent.collegeboard.org/apcourse').put()
                 template = env.get_template("templates/lowerresource3.html")
                 self.response.write(template.render())
             else:
@@ -165,8 +175,12 @@ class QuestionPage(webapp2.RequestHandler):
         #psat - lower
         elif stage == 'psat':
             psat = self.request.get('psat')
+            psatdescription = 'PSAT'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == psatdescription).get()
             if  psat == 'no':
-                template = env.get_template("templates/lowerresource4.html")
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=psatdescription, url='https://collegereadiness.collegeboard.org/psat-nmsqt-psat-10/inside-the-test').put()
+                template = env.get_template("templates/lowerq5.html")
                 self.response.write(template.render())
             else:
                 template = env.get_template("templates/lowerq5.html")
@@ -174,7 +188,11 @@ class QuestionPage(webapp2.RequestHandler):
         #careers - lower
         elif stage == 'careers':
             career = self.request.get('career')
+            careerdescription = 'Career Quiz'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == careerdescription).get()
             if  career == 'no':
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=careerdescription, url='https://www.princetonreview.com/quiz/career-quiz').put()
                 template = env.get_template("templates/lowerresource5.html")
                 self.response.write(template.render())
             else:
@@ -184,7 +202,11 @@ class QuestionPage(webapp2.RequestHandler):
         #applying - upper
         elif stage == 'applying':
                 apply = self.request.get('apply')
+                applicationdescription = 'Application Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == applicationdescription).get()
                 if  apply == 'notstarted':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=applicationdescription, url='https://bigfuture.collegeboard.org/get-in/applying-101/tips-for-preparing-your-college-application').put()
                     template = env.get_template("templates/lowerresource1.html")
                     self.response.write(template.render())
                 else:
@@ -193,7 +215,11 @@ class QuestionPage(webapp2.RequestHandler):
         #scholarships - upper
         elif stage == 'scholarships':
                 funds = self.request.get('funds')
+                scholarshipdescription = 'Application Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == scholarshipdescription).get()
                 if  funds == 'havenot':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=scholarshipdescription, url='http://www.fastweb.com').put()
                     template = env.get_template("templates/lowerresource2.html")
                     self.response.write(template.render())
                 else:
@@ -202,7 +228,11 @@ class QuestionPage(webapp2.RequestHandler):
             #SAT - upper
         elif stage == 'SAT':
                 testing = self.request.get('testing')
+                testdescription = 'Standardized Testing Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == testdescription).get()
                 if  testing == 'no':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=testdescription, url='https://www.khanacademy.org/sat').put()
                     template = env.get_template("templates/lowerresource3.html")
                     self.response.write(template.render())
                 else:
@@ -211,7 +241,11 @@ class QuestionPage(webapp2.RequestHandler):
             #campus - upper
         elif stage == 'campus':
                 place = self.request.get('place')
+                campusdescription = 'Campus Visits'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == campusdescription).get()
                 if  place == 'no':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=campusdescription, url='https://bigfuture.collegeboard.org/find-colleges/campus-visit-guide').put()
                     template = env.get_template("templates/lowerresource4.html")
                     self.response.write(template.render())
                 else:
@@ -220,7 +254,11 @@ class QuestionPage(webapp2.RequestHandler):
             #essays - upper
         elif stage == 'essays':
                 essay = self.request.get('essay')
+                essaydescription = 'Essay Writing Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == essaydescription).get()
                 if  essay == 'havenot':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=essaydescription, url='https://bigfuture.collegeboard.org/get-in/essays').put()
                     template = env.get_template("templates/lowerresource5.html")
                     self.response.write(template.render())
                 else:
@@ -229,7 +267,11 @@ class QuestionPage(webapp2.RequestHandler):
             #FAFSA - upper
         elif stage == 'FAFSA':
                 finaid = self.request.get('finaid')
+                finaiddescription = 'Financial Aid Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == finaiddescription).get()
                 if  finaid == 'notstarted':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=finaiddescription, url='https://fafsa.ed.gov/').put()
                     template = env.get_template("templates/lowerresource5.html")
                     self.response.write(template.render())
                 else:
