@@ -139,11 +139,11 @@ class QuestionPage(webapp2.RequestHandler):
             if studyhabits == 'whenever' or studyhabits == 'not':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=tips, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
-                template = env.get_template("templates/lowerresource1.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq2.html")
-                self.response.write(template.render())
+            template = env.get_template("templates/lowerq2.html")
+            self.response.write(template.render())
+            # else:
+            #     template = env.get_template("templates/lowerq2.html")
+            #     self.response.write(template.render())
         #extracurriculars - lower
         elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
