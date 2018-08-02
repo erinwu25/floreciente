@@ -203,7 +203,7 @@ class QuestionPage(webapp2.RequestHandler):
         elif stage == 'applying':
                 apply = self.request.get('apply')
                 applicationdescription = 'Application Resources'
-                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == careerdescription).get()
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == applicationdescription).get()
                 if  apply == 'notstarted':
                     template = env.get_template("templates/lowerresource1.html")
                     self.response.write(template.render())
