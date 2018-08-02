@@ -6,6 +6,9 @@ let a = document.querySelector('.lq1');
 let b = document.querySelector('.lq2');
 let c = document.querySelector('.lq3');
 
+function windowfetch(){}
+
+
 button.addEventListener('click', e => {
   if(p.style.display == 'none'){
     p.style.display = 'block'; }
@@ -15,7 +18,7 @@ button.addEventListener('click', e => {
   }
 });
 
-let often = document.querySelector('#often')
+let often = document.querySelector('#often');
 often.addEventListener('click', e => {
   if(p.style.display == 'none'){
     p.style.display = 'block'; }
@@ -24,7 +27,7 @@ often.addEventListener('click', e => {
   }
 });
 
-let whenever = document.querySelector('#whenever')
+let whenever = document.querySelector('#whenever');
 whenever.addEventListener('click', e => {
   if(p.style.display == 'none'){
     p.style.display = 'block'; }
@@ -32,14 +35,21 @@ whenever.addEventListener('click', e => {
      p.style.display = 'none';
   }
 });
-let not = document.querySelector('#not')
+let not = document.querySelector('#not');
 not.addEventListener('click', e => {
-  if(p.style.display == 'none'){
-    p.style.display = 'block'; }
-  else{
-     p.style.display = 'none';
+  // if(c.style.display == 'none'){
+  //   c.style.display = 'block'; }
+  // else{
+  //    c.style.display = 'none';
+  // }
+
+  header = {
+    'Content-Type': 'text/html'
   }
+  body = 'study tips'
+  window.fetch('/resource', {'headers': header,'method': 'post', 'body': body, 'credentials': 'include'});
 });
+
 //wikipedia.remove();
 //wikipedia.innerText = 'Google.com';
 // wikipedia.style.backgroundColor = 'pink'

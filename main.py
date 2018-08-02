@@ -87,6 +87,14 @@ class RedirectPage(webapp2.RequestHandler):
         template = env.get_template("/templates/main.html")
         self.response.write(template.render())
 
+class ResourceHandler(webapp2.RequestHandler):
+    def post(self):
+        resource_name = self.request.body
+        logging.info(resource_name)
+        email = users.get_current_user().email()
+        current_student = Student.query().filter(Student.email == email).get()
+        if current_student and resource_name == 'study tips':
+            Resource(student_key=current_student.key, description='Study Tips', url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
 
 class QuestionPage(webapp2.RequestHandler):
     def get(self):
@@ -129,7 +137,7 @@ class QuestionPage(webapp2.RequestHandler):
         elif stage == 'study':
             logging.info('working')
             studyhabits = self.request.get('studyh')
-            logging.info(studyhabits)
+            #logging.info(studyhabits)
             if studyhabits == 'whenever' or studyhabits == 'not':
                 Resource(student_key=current_student.key, description='Study Tips', url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
                 template = env.get_template("templates/lowerresource1.html")
@@ -235,6 +243,7 @@ app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/qpg', QuestionPage),
     ('/redirect', RedirectPage),
+    ('/resource', ResourceHandler),
 
 
 
