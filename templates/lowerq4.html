@@ -5,7 +5,7 @@
   <div>
     <ul>
       <li class="flor">
-        Floreciente
+        <a href="/" class="flor"> Floreciente </a>
       </li>
       <li class="florslogan">
           Cultivating Excellence
@@ -22,24 +22,24 @@
 <form method=POST>
     <h2>Have you began practicing for the PSAT? </h2>
     <label class="option">
-    <p><input type="radio" id="nostudy" name="psat" value="no">I have not began studying for the PSAT.<br>
+      <input type="radio" id="nostudy" name="psat" value="no">I have not began studying for the PSAT.<br>
     </label>
-    <br>
+    <br><br>
     <label class="option">
-    <input type="radio" id="study" name="psat" value="yes">I have started studying for the PSAT.<br>
+      <input type="radio" id="study" name="psat" value="yes">I have started studying for the PSAT.<br>
   </label>
-    <br>
+  <br><br>
   </p>
     <input type="hidden" name="stage" value="psat">
     <input type="submit" class="nextButton" value="Next question"/>
 </form>
-
 </div>
-<div class="apibdescription" style="">
-  yuh ap ib
+<br>
+<div class="studydescription" style="display: none;">
+  yuh psat
 </div>
-<div class="noapibdescription">
-  no ib ap
+<div class="nostudydescription" style="display: none;">
+  no psat
 </div>
 
 <script src="/scripts/lq4.js"></script>
