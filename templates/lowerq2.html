@@ -22,9 +22,13 @@
 <form method=POST>
     <p class="questhead">Are you involved in any extracurricular activities such as school clubs,
     sports, student body, etc?</p>
-    <p><input type="button" class="option" name="ecs" value="I am not involved in any extracurriculars."><br>
+    <p><label class="option">
+      <input type="radio" class="option" name="ecs" value="no">I am not involved in any extracurriculars.<br>
+      </label>
     <br>
-    <input type="button" class="option" name="ecs" value="I am involved in extracurriculars at my school.">
+    <p><label class="option">
+        <input type="radio" class="option" name="ecs" value="yes">I am involved in extracurriculars at my school.
+    </label>
     <br>
     <br>
     <input type="hidden" name="stage" value="extracurriculars">
