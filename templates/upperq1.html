@@ -22,11 +22,11 @@
 <form method=POST>
     <h2>Have you began applying to colleges?</h2>
     <label class="option">
-    <input type="radio" name="apply" value="yes">I have started my college applications.<br>
+    <input type="radio" id="started" name="apply" value="yes">I have started my college applications.<br>
     </label>
     <br>
     <label class="option">
-    <input type="radio" name="apply" value="notstarted">I have not began applying to colleges.<br>
+    <input type="radio" id="notstarted" name="apply" value="notstarted">I have not began applying to colleges.<br>
     </label>
     <br>
     <br>
@@ -37,4 +37,11 @@
 </form>
 </div>
 
-<script src="/scripts/main.js"></script>
+<div class="starteddescription" style="display: none;">
+   i started
+</div>
+<div class="notstarteddescription" style="display: none;">
+   notstarted
+</div>
+
+<script src="/scripts/uq1.js"></script>
