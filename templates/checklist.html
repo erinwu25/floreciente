@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" href="images/rose.jpg">
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
 /* Include the padding and border in an element's total width and height */
 body{
   background-color: #233142;
@@ -11,6 +13,16 @@ body{
     box-sizing: border-box;
 }
 
+.checklistlogo{
+    color: #facf5a;
+    padding-left: 15px;
+    font-weight: bold;
+    list-style-type: none;
+    text-decoration: none;
+    color: #f95959;
+    padding-left: 5px;
+    font-weight: normal;
+}
 /* Remove margins and padding from the list */
 ul {
     margin: 0;
@@ -106,13 +118,42 @@ input {
     float: left;
     font-size: 16px;
 }
+.flor {
+  color: #facf5a;
+  padding-left: 15px;
+  font-weight: bold;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.florslogan {
+  color: #f95959;
+  padding-left: 5px;
+  font-weight: normal;
+}
 
 </style>
 </head>
 <body>
+  <div class="checklistlogo"
+  <ul>
+    <li>
+      <a href="/" class="flor"> Floreciente </a>    </li>
+    <li class="florslogan">
+        Cultivating Excellence
+      </li>
+    </ul>
+  </div>
+      <!-- <li class="logout">
+        <a class="logout" href="{{logout_url}}">
+          Log out
+        </a>
+      </li> -->
+
   <div id="resourcesCompleted" class="header">
     <h2>Resources Completed</h2>
   </div>
+
 
   <!-- <ul id="myUL">
     <li class="checked">Hit the gym</li>
@@ -131,3 +172,4 @@ input {
 </body>
 </html>
 <script src="/scripts/checklist.js"></script>
+<script src="/scripts/lq1.js"></script>
