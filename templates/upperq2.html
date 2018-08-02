@@ -23,11 +23,11 @@
 <form method=POST>
     <h2>Have you applied to any scholarships?</h2>
     <label class="option">
-        <input type="radio" name="funds" value="yes">I have began researching scholarships and started applying to some.</label>
+        <input type="radio" id="scholarships" name="funds" value="yes">I have began researching scholarships and started applying to some.</label>
     <br>
     </label>
     <label class="option">
-    <input type="radio" name="funds" value="havenot">I have not began applying to any scholarships.<br>
+    <input type="radio" id="noscholarships" name="funds" value="havenot">I have not began applying to any scholarships.<br>
     </label>
     <br>
     <br>
@@ -37,5 +37,10 @@
     <input type="submit" class="nextButton" value="Next question"/>
 </form>
 </div>
-
-<script src="/scripts/main.js"></script>
+<div class="scholarshipsdescription" style="display: none;">
+  hehe scholarships
+</div>
+<div class="noscholarshipsdescription" style="display: none;">
+  hehe no scholarships
+</div>
+<script src="/scripts/uq2.js"></script>
