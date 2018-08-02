@@ -1,7 +1,7 @@
-let  = document.querySelector('#');
-let  = document.querySelector('.')
-let  = document.querySelector('#');
-let  = document.querySelector('.')
+let novisit = document.querySelector('#novisit');
+let novisitdescription = document.querySelector('.')
+let visit = document.querySelector('#visit');
+let novisitdescription = document.querySelector('.')
 
 .addEventListener('click', e => {
   .style.display = 'none';

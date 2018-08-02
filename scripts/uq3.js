@@ -1,14 +1,14 @@
-let  = document.querySelector('#');
-let  = document.querySelector('.')
-let  = document.querySelector('#');
-let  = document.querySelector('.')
+let sat = document.querySelector('#');
+let satdescription = document.querySelector('.')
+let nosat = document.querySelector('#');
+let nosatdescription = document.querySelector('.')
 
-.addEventListener('click', e => {
-  .style.display = 'none';
-  .style.display = 'block';
+sat.addEventListener('click', e => {
+  nosatdescription.style.display = 'none';
+  satdescription.style.display = 'block';
 });
 
-.addEventListener('click', e => {
-  .style.display = 'none';
-  .style.display = 'block';
+nosat.addEventListener('click', e => {
+  satdescription.style.display = 'none';
+  nosatdescription.style.display = 'block';
 });

@@ -22,11 +22,11 @@
 <form method=POST>
     <h2>Have you visited any college campuses?</h2>
     <label class="option">
-      <input type="radio" name="place" value="no">I have not visited any college campuses.<br>
+      <input type="radio" id="novisit"name="place" value="no">I have not visited any college campuses.<br>
     </label>
   <br><br>
     <label class="option">
-      <input type="radio" name="place" value="yes">I have been on a few college tours.<br>
+      <input type="radio" id="visit" name="place" value="yes">I have been on a few college tours.<br>
     </label>
 
     <br>
@@ -36,8 +36,8 @@
     <input type="submit" class="nextButton" value="Next question"/>
 </form>
 </div>
-<div class=""style="display: none;">
+<div class="novisit" style="display: none;">
 </div>
-<div class="" style="display: none;">
+<div class="visit" style="display: none;">
 </div>
 <script src="/scripts/uq4.js"></script>
