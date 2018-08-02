@@ -114,12 +114,20 @@ input {
     <h2>Resources Completed</h2>
   </div>
 
-  <ul id="myUL">
+  <!-- <ul id="myUL">
     <li class="checked">Hit the gym</li>
     <li class="checked">Study Habits</li>
-    <li class="checked">Start FAFSA</li>
-    <li>Study for SAT</li>
-    <li>Write essays</li>
-  </ul>
+    <li class="checked">Start FAFSA</li> -->
+    <!-- <li>Study for SAT</li>
+    <li>Write essays</li> -->
+  <!-- </ul> -->
+
+  {% for resource in resource_list %}
+    <ul id="myUL">
+      <li id="resource"><a href='{{resource.url}}'>{{resource.description}}</a></li>
+    </ul>
+  {% endfor %}
+
 </body>
 </html>
+<script src="/scripts/checklist.js"></script>
