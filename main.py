@@ -86,16 +86,10 @@ class ChecklistPage(webapp2.RequestHandler):
     def get (self):
         email = users.get_current_user().email()
         current_student_key = Student.query().filter(Student.email == email).get().key
-        # logging.info(current_student_key)
-        # logging.info(Resource.student_key)
         resource_list = Resource.query().filter(Resource.student_key == current_student_key).fetch()
-        # resource_description = resource_list[1]
-        # resource_url = resource_list[2]
 
         templateVars = {
             'resource_list' : resource_list,
-            # 'resource_description' : resource_description,
-            # 'resource_url' : resource_url,
 
         }
         template = env.get_template("/templates/checklist.html")
