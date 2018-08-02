@@ -203,8 +203,10 @@ class QuestionPage(webapp2.RequestHandler):
         elif stage == 'applying':
                 apply = self.request.get('apply')
                 applicationdescription = 'Application Resources'
-                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == careerdescription).get()
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == applicationdescription).get()
                 if  apply == 'notstarted':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=applicationdescription, url='https://bigfuture.collegeboard.org/get-in/applying-101/tips-for-preparing-your-college-application').put()
                     template = env.get_template("templates/lowerresource1.html")
                     self.response.write(template.render())
                 else:
@@ -213,7 +215,11 @@ class QuestionPage(webapp2.RequestHandler):
         #scholarships - upper
         elif stage == 'scholarships':
                 funds = self.request.get('funds')
+                scholarshipdescription = 'Application Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == scholarshipdescription).get()
                 if  funds == 'havenot':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=scholarshipdescription, url='http://www.fastweb.com').put()
                     template = env.get_template("templates/lowerresource2.html")
                     self.response.write(template.render())
                 else:
