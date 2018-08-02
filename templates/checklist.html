@@ -1,1 +1,10 @@
 <!DOCTYPE html>
+
+<!-- for loop -->
+{% for resource in resource_list %}
+  <ul>
+    <li><a href="{{resource.url}}">{{resource.description}}</a></li>
+
+
+  </ul>
+{% endfor %}

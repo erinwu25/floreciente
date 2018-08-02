@@ -84,8 +84,22 @@ class MainPage(webapp2.RequestHandler):
 
 class ChecklistPage(webapp2.RequestHandler):
     def get (self):
+        email = users.get_current_user().email()
+        current_student_key = Student.query().filter(Student.email == email).get().key
+        # logging.info(current_student_key)
+        # logging.info(Resource.student_key)
+        resource_list = Resource.query().filter(Resource.student_key == current_student_key).fetch()
+        # resource_description = resource_list[1]
+        # resource_url = resource_list[2]
+
+        templateVars = {
+            'resource_list' : resource_list,
+            # 'resource_description' : resource_description,
+            # 'resource_url' : resource_url,
+
+        }
         template = env.get_template("/templates/checklist.html")
-        self.response.write(template.render())
+        self.response.write(template.render(templateVars))
 
 class ResourceHandler(webapp2.RequestHandler):
     def post(self):
@@ -125,9 +139,12 @@ class QuestionPage(webapp2.RequestHandler):
         elif stage == 'study':
             logging.info('working')
             studyhabits = self.request.get('studyh')
+            tips = 'Study Tips'
+            resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == tips).get()
             #logging.info(studyhabits)
             if studyhabits == 'whenever' or studyhabits == 'not':
-                Resource(student_key=current_student.key, description='Study Tips', url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
+                if not resource_check:
+                    Resource(student_key=current_student.key, description=tips, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
                 template = env.get_template("templates/lowerresource1.html")
                 self.response.write(template.render())
             else:
@@ -230,7 +247,7 @@ class QuestionPage(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/qpg', QuestionPage),
-    ('/redirect', RedirectPage),
+    #('/redirect', RedirectPage),
     ('/resource', ResourceHandler),
     ('/checklist', ChecklistPage),
 
