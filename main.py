@@ -153,11 +153,9 @@ class QuestionPage(webapp2.RequestHandler):
             if excs == 'no':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=ecs, url='https://www.fastweb.com/student-life/articles/impressive-extracurriculars').put()
-                template = env.get_template("templates/lowerresource2.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq3.html")
-                self.response.write(template.render())
+
+            template = env.get_template("templates/lowerq3.html")
+            self.response.write(template.render())
         #classes - lower
         elif stage == 'classes':
             classes = self.request.get('classes')
@@ -167,11 +165,9 @@ class QuestionPage(webapp2.RequestHandler):
             if classes == 'not':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=classdescription, url='https://apstudent.collegeboard.org/apcourse').put()
-                template = env.get_template("templates/lowerresource3.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq4.html")
-                self.response.write(template.render())
+
+            template = env.get_template("templates/lowerq4.html")
+            self.response.write(template.render())
         #psat - lower
         elif stage == 'psat':
             psat = self.request.get('psat')
@@ -180,11 +176,9 @@ class QuestionPage(webapp2.RequestHandler):
             if  psat == 'no':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=psatdescription, url='https://collegereadiness.collegeboard.org/psat-nmsqt-psat-10/inside-the-test').put()
-                template = env.get_template("templates/lowerq5.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq5.html")
-                self.response.write(template.render())
+
+            template = env.get_template("templates/lowerq5.html")
+            self.response.write(template.render())
         #careers - lower
         elif stage == 'careers':
             career = self.request.get('career')
@@ -193,11 +187,9 @@ class QuestionPage(webapp2.RequestHandler):
             if  career == 'no':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=careerdescription, url='https://www.princetonreview.com/quiz/career-quiz').put()
-                template = env.get_template("templates/lowerresource5.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq6.html")
-                self.response.write(template.render())
+
+            template = env.get_template("templates/checklist.html")
+            self.response.write(template.render())
 #######upper######
         #applying - upper
         elif stage == 'applying':
@@ -207,11 +199,9 @@ class QuestionPage(webapp2.RequestHandler):
                 if  apply == 'notstarted':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=applicationdescription, url='https://bigfuture.collegeboard.org/get-in/applying-101/tips-for-preparing-your-college-application').put()
-                    template = env.get_template("templates/lowerresource1.html")
-                    self.response.write(template.render())
-                else:
-                    template = env.get_template("templates/upperq2.html")
-                    self.response.write(template.render())
+
+                template = env.get_template("templates/upperq2.html")
+                self.response.write(template.render())
         #scholarships - upper
         elif stage == 'scholarships':
                 funds = self.request.get('funds')
@@ -220,11 +210,9 @@ class QuestionPage(webapp2.RequestHandler):
                 if  funds == 'havenot':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=scholarshipdescription, url='http://www.fastweb.com').put()
-                    template = env.get_template("templates/lowerresource2.html")
-                    self.response.write(template.render())
-                else:
-                    template = env.get_template("templates/upperq3.html")
-                    self.response.write(template.render())
+
+                template = env.get_template("templates/upperq3.html")
+                self.response.write(template.render())
             #SAT - upper
         elif stage == 'SAT':
                 testing = self.request.get('testing')
@@ -233,11 +221,9 @@ class QuestionPage(webapp2.RequestHandler):
                 if  testing == 'no':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=testdescription, url='https://www.khanacademy.org/sat').put()
-                    template = env.get_template("templates/lowerresource3.html")
-                    self.response.write(template.render())
-                else:
-                    template = env.get_template("templates/upperq4.html")
-                    self.response.write(template.render())
+
+                template = env.get_template("templates/upperq4.html")
+                self.response.write(template.render())
             #campus - upper
         elif stage == 'campus':
                 place = self.request.get('place')
@@ -246,11 +232,9 @@ class QuestionPage(webapp2.RequestHandler):
                 if  place == 'no':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=campusdescription, url='https://bigfuture.collegeboard.org/find-colleges/campus-visit-guide').put()
-                    template = env.get_template("templates/lowerresource4.html")
-                    self.response.write(template.render())
-                else:
-                    template = env.get_template("templates/upperq5.html")
-                    self.response.write(template.render())
+
+                template = env.get_template("templates/upperq5.html")
+                self.response.write(template.render())
             #essays - upper
         elif stage == 'essays':
                 essay = self.request.get('essay')
@@ -259,11 +243,9 @@ class QuestionPage(webapp2.RequestHandler):
                 if  essay == 'havenot':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=essaydescription, url='https://bigfuture.collegeboard.org/get-in/essays').put()
-                    template = env.get_template("templates/lowerresource5.html")
-                    self.response.write(template.render())
-                else:
-                    template = env.get_template("templates/upperq6.html")
-                    self.response.write(template.render())
+
+                template = env.get_template("templates/upperq6.html")
+                self.response.write(template.render())
             #FAFSA - upper
         elif stage == 'FAFSA':
                 finaid = self.request.get('finaid')
@@ -272,11 +254,9 @@ class QuestionPage(webapp2.RequestHandler):
                 if  finaid == 'notstarted':
                     if not resource_check:
                         Resource(student_key=current_student.key, description=finaiddescription, url='https://fafsa.ed.gov/').put()
-                    template = env.get_template("templates/lowerresource5.html")
-                    self.response.write(template.render())
-                else:
-                    template = env.get_template("templates/lowerq6.html")
-                    self.response.write(template.render())
+
+                template = env.get_template("templates/checklist.html")
+                self.response.write(template.render())
 
 
 
