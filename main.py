@@ -139,11 +139,11 @@ class QuestionPage(webapp2.RequestHandler):
             if studyhabits == 'whenever' or studyhabits == 'not':
                 if not resource_check:
                     Resource(student_key=current_student.key, description=tips, url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
-                template = env.get_template("templates/lowerresource1.html")
-                self.response.write(template.render())
-            else:
-                template = env.get_template("templates/lowerq2.html")
-                self.response.write(template.render())
+            template = env.get_template("templates/lowerq2.html")
+            self.response.write(template.render())
+            # else:
+            #     template = env.get_template("templates/lowerq2.html")
+            #     self.response.write(template.render())
         #extracurriculars - lower
         elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
@@ -228,7 +228,11 @@ class QuestionPage(webapp2.RequestHandler):
             #SAT - upper
         elif stage == 'SAT':
                 testing = self.request.get('testing')
+                testdescription = 'Standardized Testing Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == testdescription).get()
                 if  testing == 'no':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=testdescription, url='https://www.khanacademy.org/sat').put()
                     template = env.get_template("templates/lowerresource3.html")
                     self.response.write(template.render())
                 else:
@@ -237,7 +241,11 @@ class QuestionPage(webapp2.RequestHandler):
             #campus - upper
         elif stage == 'campus':
                 place = self.request.get('place')
+                campusdescription = 'Campus Visits'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == campusdescription).get()
                 if  place == 'no':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=campusdescription, url='https://bigfuture.collegeboard.org/find-colleges/campus-visit-guide').put()
                     template = env.get_template("templates/lowerresource4.html")
                     self.response.write(template.render())
                 else:
@@ -246,7 +254,11 @@ class QuestionPage(webapp2.RequestHandler):
             #essays - upper
         elif stage == 'essays':
                 essay = self.request.get('essay')
+                essaydescription = 'Essay Writing Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == essaydescription).get()
                 if  essay == 'havenot':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=essaydescription, url='https://bigfuture.collegeboard.org/get-in/essays').put()
                     template = env.get_template("templates/lowerresource5.html")
                     self.response.write(template.render())
                 else:
@@ -255,7 +267,11 @@ class QuestionPage(webapp2.RequestHandler):
             #FAFSA - upper
         elif stage == 'FAFSA':
                 finaid = self.request.get('finaid')
+                finaiddescription = 'Financial Aid Resources'
+                resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == finaiddescription).get()
                 if  finaid == 'notstarted':
+                    if not resource_check:
+                        Resource(student_key=current_student.key, description=finaiddescription, url='https://fafsa.ed.gov/').put()
                     template = env.get_template("templates/lowerresource5.html")
                     self.response.write(template.render())
                 else:
