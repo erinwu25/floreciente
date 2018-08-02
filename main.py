@@ -82,9 +82,9 @@ class MainPage(webapp2.RequestHandler):
     #     self.redirect('/')
 
 
-class RedirectPage(webapp2.RequestHandler):
+class ChecklistPage(webapp2.RequestHandler):
     def get (self):
-        template = env.get_template("/templates/main.html")
+        template = env.get_template("/templates/checklist.html")
         self.response.write(template.render())
 
 class ResourceHandler(webapp2.RequestHandler):
@@ -98,18 +98,6 @@ class ResourceHandler(webapp2.RequestHandler):
 
 class QuestionPage(webapp2.RequestHandler):
     def get(self):
-        # qs = [
-        #     #question 1
-        #     {
-        #         'question' : 'What is your name?',
-        #         'answers' : ['a1', 'a2', 'a3'],
-        #     },
-        #     #question 2
-        #     {
-        #         'question' : 'blah blah blah',
-        #         'answers' : ['a1', 'a2', 'a3'],
-        #     },
-        # ]
         template = env.get_template("/templates/qpg.html")
         self.response.write(template.render())
 
@@ -121,7 +109,7 @@ class QuestionPage(webapp2.RequestHandler):
         if stage == 'intro':
             name = self.request.get('name') #<-- name is the name from the form
 
-            logging.info('I am here')
+            #logging.info('I am here')
             if not current_student:
                 student = Student(name=name, email=email)
                 student.put()
@@ -244,6 +232,7 @@ app = webapp2.WSGIApplication([
     ('/qpg', QuestionPage),
     ('/redirect', RedirectPage),
     ('/resource', ResourceHandler),
+    ('/checklist', ChecklistPage),
 
 
 
