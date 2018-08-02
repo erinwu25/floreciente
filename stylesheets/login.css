@@ -23,3 +23,132 @@ body{
   background-color: #6D7973;
   color: #E5DACE;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  background-color: #233142;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+    display: inline;
+    float: left;
+}
+
+img {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#scale {
+  width: 100px;
+  height: auto;
+}
+.flor {
+  color: #facf5a;
+  padding-left: 15px;
+  font-weight: bold;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.florslogan {
+  color: #f95959;
+  padding-left: 5px;
+  font-weight: normal;
+}
+
+.login {
+  float: right;
+  padding-right: 10px;
+  color: #facf5a;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.imagebox {
+  display: inline-block;
+  overflow:hidden;
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 7px solid #455d7a;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote {
+  text-align: center;
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.author {
+  text-align: center;
+  padding-left: 500px;
+  color: white;
+}
+
+.welcome {
+  text-decoration: none;
+  float: right;
+  color: white;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.logout {
+  text-decoration: none;
+  float: right;
+  color: #facf5a;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.quiz {
+  text-align: center;
+}
+
+.headabovebutton {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.abovebutton {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.button {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  background-color: #facf5a;
+  border: none;
+  color: white;
+  padding: 20px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+}
