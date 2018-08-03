@@ -137,3 +137,8 @@ input {
   background-color: #233142;
   text-align: left;
 }
+
+.resource {
+  text-decoration: none;
+  color: #233142;
+}
