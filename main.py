@@ -112,7 +112,7 @@ class QuestionPage(webapp2.RequestHandler):
         elif stage == 'study':
             logging.info('working')
             studyhabits = self.request.get('studyh')
-            studydescription = 'Study Tips'
+            studydescription = 'Study Tips from PrepScholar'
             resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == studydescription).get()
 
             if studyhabits == 'whenever' or studyhabits == 'not':
@@ -126,7 +126,7 @@ class QuestionPage(webapp2.RequestHandler):
         #extracurriculars - lower
         elif stage == 'extracurriculars':
             excs = self.request.get('ecs')
-            ecsdescription = 'Extracurriculars'
+            ecsdescription = 'Some extracurriculars to get you started'
             resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == ecsdescription).get()
 
             if excs == 'no':
@@ -138,7 +138,7 @@ class QuestionPage(webapp2.RequestHandler):
         #classes - lower
         elif stage == 'classes':
             classes = self.request.get('classes')
-            classdescription = 'Classes'
+            classdescription = 'More about AP Classes'
             resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == classdescription).get()
 
             if classes == 'not':
@@ -150,7 +150,7 @@ class QuestionPage(webapp2.RequestHandler):
         #psat - lower
         elif stage == 'psat':
             psat = self.request.get('psat')
-            psatdescription = 'PSAT'
+            psatdescription = 'More about the PSAT'
             resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == psatdescription).get()
             if  psat == 'no':
                 if not resource_check:
@@ -172,7 +172,7 @@ class QuestionPage(webapp2.RequestHandler):
         #applying - upper
         elif stage == 'applying':
                 apply = self.request.get('apply')
-                applicationdescription = 'Application Resources'
+                applicationdescription = 'College Application Resources'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == applicationdescription).get()
                 if  apply == 'notstarted':
                     if not resource_check:
@@ -183,7 +183,7 @@ class QuestionPage(webapp2.RequestHandler):
         #scholarships - upper
         elif stage == 'scholarships':
                 funds = self.request.get('funds')
-                scholarshipdescription = 'Application Resources'
+                scholarshipdescription = 'Search for some scholarships'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == scholarshipdescription).get()
                 if  funds == 'havenot':
                     if not resource_check:
@@ -194,7 +194,7 @@ class QuestionPage(webapp2.RequestHandler):
             #SAT - upper
         elif stage == 'SAT':
                 testing = self.request.get('testing')
-                testdescription = 'Standardized Testing Resources'
+                testdescription = 'SAT Practice'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == testdescription).get()
                 if  testing == 'no':
                     if not resource_check:
@@ -205,7 +205,7 @@ class QuestionPage(webapp2.RequestHandler):
             #campus - upper
         elif stage == 'campus':
                 place = self.request.get('place')
-                campusdescription = 'Campus Visits'
+                campusdescription = 'More about Campus Visits'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == campusdescription).get()
                 if  place == 'no':
                     if not resource_check:
@@ -216,7 +216,7 @@ class QuestionPage(webapp2.RequestHandler):
             #essays - upper
         elif stage == 'essays':
                 essay = self.request.get('essay')
-                essaydescription = 'Essay Writing Resources'
+                essaydescription = 'College Essay Writing Resources'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == essaydescription).get()
                 if  essay == 'havenot':
                     if not resource_check:
@@ -227,7 +227,7 @@ class QuestionPage(webapp2.RequestHandler):
             #FAFSA - upper
         elif stage == 'FAFSA':
                 finaid = self.request.get('finaid')
-                finaiddescription = 'Financial Aid Resources'
+                finaiddescription = 'Look into the FAFSA'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == finaiddescription).get()
                 if  finaid == 'notstarted':
                     if not resource_check:

@@ -1,6 +1,8 @@
-let checklistbutton = document.querySelector('#myUL');
-let resourcebutton = document.querySelector('#resource')
+let checklistbutton = document.querySelectorAll('.myUL');
+//let resourcebutton = document.querySelectorAll('.resource')
 
-checklistbutton.addEventListener('click', e => {
-  resourcebutton.classList.toggle('checked');
+for(let button of checklistbutton){
+  button.addEventListener('click', e => {
+  button.querySelector('.resource').classList.toggle('checked');
 });
+}
