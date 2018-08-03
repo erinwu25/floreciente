@@ -54,8 +54,6 @@ ul li:hover {
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
-  background: #facf5a;
-  color: #fff;
   text-decoration: line-through;
 }
 
@@ -141,4 +139,5 @@ input {
 .resource {
   text-decoration: none;
   color: #233142;
+
 }
