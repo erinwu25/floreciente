@@ -229,9 +229,10 @@ class QuestionPage(webapp2.RequestHandler):
                 finaid = self.request.get('finaid')
                 finaiddescription = 'Look into the FAFSA'
                 resource_check = Resource.query().filter(Resource.student_key == current_student.key).filter(Resource.description == finaiddescription).get()
+                logging.info(resource_check)
                 if  finaid == 'notstarted':
                     if not resource_check:
-                        Resource(student_key=current_student.key, description=finaiddescription, url='https://fafsa.ed.gov/').put()
+                        Resource(student_key=current_student.key, description=finaiddescription, url='https://www.nerdwallet.com/blog/fafsa-guide/').put()
                 self.redirect('/checklist')
 
 
