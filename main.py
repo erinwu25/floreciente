@@ -12,6 +12,7 @@ class Student(ndb.Model):
     email = ndb.StringProperty()
 
 class Quote(ndb.Model):
+    image = ndb.StringProperty()
     content = ndb.StringProperty()
     author = ndb.StringProperty()
     # TODO(yojairo): Set an index on the quote and look up a random
@@ -38,9 +39,6 @@ class MainPage(webapp2.RequestHandler):
         # randquote = random.choice(randquotes)
         # return randquote.content
         # return randquote.author
-        #query looku for quotes in database. use random function
-        #to pick random index in list, pick quote to return the quote that
-        #was selected
 
     def get(self):
         login_url = ''
@@ -52,10 +50,13 @@ class MainPage(webapp2.RequestHandler):
             login_url = users.create_login_url('/')
         else:
             logout_url = users.create_logout_url('/')
+        randquotes = Quote.query().fetch()
+        randquote = random.choice(randquotes)
         templateVars = {
             'current_user' : current_user,
             'login_url' : login_url,
             'logout_url' : logout_url,
+            'quote' : randquote,
         }
         template = env.get_template('/templates/home.html')
         self.response.write(template.render(templateVars))
