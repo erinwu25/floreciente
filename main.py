@@ -23,11 +23,13 @@ class Resource(ndb.Model):
     description = ndb.StringProperty()
     url = ndb.StringProperty()
 
+
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True
 )
+
 
 
 class MainPage(webapp2.RequestHandler):
@@ -81,6 +83,12 @@ class ResourceHandler(webapp2.RequestHandler):
         current_student = Student.query().filter(Student.email == email).get()
         if current_student and resource_name == 'study tips':
             Resource(student_key=current_student.key, description='Study Tips', url='https://blog.prepscholar.com/how-to-study-better-in-high-school').put()
+
+class AboutUs(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("/templates/aboutus.html")
+        self.response.write(template.render())
+
 
 class QuestionPage(webapp2.RequestHandler):
     def get(self):
@@ -242,6 +250,7 @@ app = webapp2.WSGIApplication([
     ('/qpg', QuestionPage),
     ('/resource', ResourceHandler),
     ('/checklist', ChecklistPage),
+    ('/aboutus', AboutUs),
 
 
 
