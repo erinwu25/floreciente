@@ -126,3 +126,11 @@ img {
   display: inline-block;
   font-size: 30px;
 }
+.about{
+  text-decoration: none;
+  float: right;
+  color: #facf5a;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 15px;
+}
