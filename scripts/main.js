@@ -29,8 +29,8 @@ not.addEventListener('click', e => {
 
 
 
-  header = {
-    'Content-Type': 'text/html'
-  }
-  body = 'study tips'
-  window.fetch('/resource', {'headers': header,'method': 'post', 'body': body, 'credentials': 'include'});
+  // header = {
+  //   'Content-Type': 'text/html'
+  // }
+  // body = 'study tips'
+  // window.fetch('/resource', {'headers': header,'method': 'post', 'body': body, 'credentials': 'include'});
