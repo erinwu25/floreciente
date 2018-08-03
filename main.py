@@ -67,14 +67,18 @@ class MainPage(webapp2.RequestHandler):
 class ChecklistPage(webapp2.RequestHandler):
     def get (self):
         email = users.get_current_user().email()
-        current_student_key = Student.query().filter(Student.email == email).get().key
-        resource_list = Resource.query().filter(Resource.student_key == current_student_key).fetch()
+        current_student = Student.query().filter(Student.email == email).get()
+        if current_student is None:
+            logging.info('redirecting')
+            self.redirect('/')
+        else:
+            resource_list = Resource.query().filter(Resource.student_key == current_student.key).fetch()
 
-        templateVars = {
-            'resource_list' : resource_list,
-        }
-        template = env.get_template("/templates/checklist.html")
-        self.response.write(template.render(templateVars))
+            templateVars = {
+                'resource_list' : resource_list,
+            }
+            template = env.get_template("/templates/checklist.html")
+            self.response.write(template.render(templateVars))
 
 class ResourceHandler(webapp2.RequestHandler):
     def post(self):
