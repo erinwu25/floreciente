@@ -49,13 +49,13 @@
     <a class="login" href="{{login_url}}"> Log in / Sign Up </a>
     <br><br><br>
     <div class="imagebox">
-      <img src="images/malcolmx.jpg">
+      <img src="{{quote.image}}">
     </div>
       <p class="quote">
-        "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
+        "{{quote.content}}"
       </p>
       <p class="author">
-        - Malcolm X
+        - {{quote.author}}
       </p>
     {% endif %}
   </li>
