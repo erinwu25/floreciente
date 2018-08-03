@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
 <link rel="icon" href="images/rose.jpg">
 <body>
-  <div>
+
     <ul>
       <li>
         <a href="/" class="flor"> Floreciente </a>
@@ -20,7 +20,10 @@
       <li class="welcome">
         Welcome, {{current_user}}!
       </li>
-    <ul>
+      <li class="logout">
+        <a class="logout" href="/checklist">My Checklist</a>
+      </li>
+    </ul>
   <div>
     <br><br><br>
     <div>
@@ -46,10 +49,10 @@
       <img src="images/malcolmx.jpg">
     </div>
       <p class="quote">
-        "{{quote}}Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
+        "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
       </p>
       <p class="author">
-        - {{author}} Malcolm X
+        - Malcolm X
       </p>
     {% endif %}
   </li>
