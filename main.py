@@ -91,7 +91,7 @@ class QuestionPage(webapp2.RequestHandler):
         stage = self.request.get('stage')
         email = users.get_current_user().email()
         current_student = Student.query().filter(Student.email == email).get()
-        logging.info(stage)
+        logging.info(Student.name)
         #intro
         if stage == 'intro':
             name = self.request.get('name') #<-- name is the name from the form
