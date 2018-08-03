@@ -137,3 +137,14 @@ img {
 .title{
   text-align: center;
 }
+.profilepic{
+  display: inline-block;
+  overflow:hidden;
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 7px solid #455d7a;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
