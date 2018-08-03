@@ -10,11 +10,7 @@
       <li class="florslogan">
           Cultivating Excellence
       </li>
-      <!-- <li class="logout">
-        <a class="logout" href="{{logout_url}}">
-          Log out
-        </a>
-      </li> -->
+
     </ul>
   </div>
   <br>
@@ -22,11 +18,11 @@
 <form method=POST>
     <h2>Have you taken any SAT/ACT tests yet?</h2>
     <label class="option">
-    <input type="radio" name="testing" value="no">No, I have yet to take any standardized testing.<br>
+    <input type="radio" id="nosat" name="testing" value="no">No, I have yet to take any standardized testing.<br>
     </label>
     <br><br>
     <label class="option">
-    <input type="radio" name="testing" value="yes">I have began taking standardized tests.<br>
+    <input type="radio" id="sat" name="testing" value="yes">I have began taking standardized tests.<br>
   </label>
     <br>
   </p>
@@ -35,8 +31,25 @@
     <input type="submit" class="nextButton" value="Next question"/>
 </form>
 </div>
-<div class=""style="display: none;">
+<br>
+<div class="satdescription" style="display: none;">
+  Great job! If you're not satisfied with your score, try studying with <a href="https://www.khanacademy.org/sat">Khan Academy</a>. <p>Also, look into taking <a href="https://collegereadiness.collegeboard.org/sat-subject-tests/about/at-a-glance">SAT Subject Tests</a>. Many colleges require them. 
 </div>
-<div class="" style="display: none;">
+<div class="nosatdescription" style="display: none;">
+  <h3>Interested in preparing for the SAT? </h3>
+  <p>Here are some great resources to help prepare you for the SAT!</p>
+  <ul>
+    <h2><a href="https://www.khanacademy.org/">Khan Academy</a></h2>
+    <img src="https://thebestschools.org/wp-content/uploads/2018/02/khan-logo-dark-background-200x112.png" alt="Khan Academy Test Prep logo" width="200" height="112" class="alignright size-seal wp-image-96287" srcset="https://thebestschools.org/wp-content/uploads/2018/02/khan-logo-dark-background-200x112.png 200w, https://thebestschools.org/wp-content/uploads/2018/02/khan-logo-dark-background-353x199.png 353w, https://thebestschools.org/wp-content/uploads/2018/02/khan-logo-dark-background-740x416.png 740w, https://thebestschools.org/wp-content/uploads/2018/02/khan-logo-dark-background-100x56.png 100w" sizes="(max-width: 200px) 100vw, 200px"</p>
+    <p>Khan Academy is a personalized learning resource with the goal of providing a free, world-class education for anyone, anywhere. Khan Academy has tons of practice exercises and instructional videos that users can access through a personalized learning dashboard covering a variety of subjects, from Computer Engineering to Macroeconomics to SAT Prep. Khan Academy’s SAT Test Prep course is unique because they’ve partnered with The College Board, the provider of the SAT to create an official SAT prep course.</p>
+
+    <h2><a href="https://www.princetonreview.com/">The Princeton Review</a></h2>
+    <img src="https://thebestschools.org/wp-content/uploads/2018/01/the-princeton-review-logo.png" alt="The Princeton Review logo" width="180" height="180" srcset="https://thebestschools.org/wp-content/uploads/2018/01/the-princeton-review-logo.png 180w, https://thebestschools.org/wp-content/uploads/2018/01/the-princeton-review-logo-150x150.png 150w" sizes="(max-width: 180px) 100vw, 180px" /></noscript></p>
+    <p>The Princeton Review has several options for SAT Prep. You can take a completely self-paced course, an expert-led program, or a personalized private tutoring program. The Self-Paced package includes a comprehensive SAT course with personalized on-demand lessons (you also get access to a complete ACT course as well). With the Ultimate Classroom option, you get 25 hours of live instruction from an SAT expert and four proctored practice tests, as well as access to the self-paced SAT and ACT courses.</p>
+
+    <h2><a href="https://www.prepscholar.com/">PrepScholar</a></h2>
+    <img src="https://thebestschools.org/wp-content/uploads/2018/01/prepscholar-logo-150x150.png">
+    <p>PrepScholar’s SAT Prep Course offers a personalized course focused on your unique needs, skills, and schedule. You can choose from several levels of tutoring, based on the amount of instructor involvement in your SAT prep. With the SAT Online Prep option, you have full access to the PrepScholar SAT program, as well as a customized learning path with 60+ hours of video content and 1200+ practice questions. PrepScholar Classes are ideal if you are looking for more face-to-face time with an instructor; these classes include everything in the SAT Online Prep package plus 18 hours of small group classes based on your pace and level. The Coaching option allows you to work through the SAT Online Prep course with one-on-one guidance from a tutor for either four, twelve, or fifty hours of individual instruction. PrepScholar is sure you will improve with them; they offer a money back guarantee if you don’t improve by at least 160 points on the SAT.</p>
+  </ul>
 </div>
 <script src="/scripts/uq3.js"></script>
